@@ -7,6 +7,7 @@
 \usepackage[serbian]{babel}
 %\usepackage[english,serbianc]{babel}
 \usepackage{amssymb}
+\usepackage{amsmath}
 
 \usepackage{color}
 \usepackage{url}
@@ -17,7 +18,7 @@
 
 \title{Slobodna bacanja}
 
-\author{Matija Miličević, Jovana TODO}
+\author{Matija Miličević, Jovana Rađenović}
 
 \maketitle
 
@@ -27,6 +28,78 @@ Košarkaš prilikom slobodnog bacanja izbacuje loptu sa visine koja odgovara 5/4
 
 \section{Pojmovi}
 
+Osnovni pojmovi:\\
+$h$ - visina košarkaša koji izvodi slobodna bacanja;\\
+$h_k$ - visina koša;\\
+$\theta$ - ugao izbačaja;\\
+$v_\theta$ - brzina izbačaja za ugao $\theta$ pri kojoj lopta prolazi centrom obruča;\\
+$d$ - rastojanje između projekcija košarkaša i centra obruča na parket (rastojanje koša od košarkaša u odnosu na $x$ osu);\\
+$R_L$ - poluprečnik lopte;\\
+$R_O$ - poluprečnik obruča;\\
+
+*(DIJAGRAM SA ČIČA GLIŠAMA AKO MOGUĆE!!!)\\
+
+
+\section{Prvi model}
+
+Podrazumevaćemo:
+\begin{itemize}
+
+\item da je poluprečnik lopte $R_L$ manji od poluprečnika obruča $R_O$:
+\[R_L<R_O\] %(3.1.1)
+
+\item da je $\theta$ između $0^0$ i $90^0$:\\
+\[0 < \theta < \pi/2\]
+
+\item da je visina koša $h_k$ veća od visine izbačaja košarkaša $\dfrac{_5}{^4}h$:\\
+\[h_k > \dfrac{_5}{^4}h\]  %\hfill \centerline{}
+(ovo nije obavezno ali olakšava crtanje slike)\\
+
+\end{itemize}
+
+%*(OVDE IDE DIJAGRAM!!!)\\
+
+
+Posmatraćemo centar lopte kao materijalnu tačku $(x,y)$ koja počinje svoj put iz tačke $(x_0,y_0) = (0,\dfrac{_5}{^4}h)$. Sile koje deluju na loptu su inicijalna sila šuta pod uglom $\theta$ u odnosu na parket i gravitacija.\\
+
+*(OVDE IDE DIJAGRAM!!!)\\
+
+Da bi lopta prošla centrom obruča poluprečnika $R_O$ mora biti ispunjeno da je $(x,y) = (d,h_k)$ pri padu lopte (lopta je na putanji prošla tačku maksimalne visine $y_{max}$;
+Znamo iz postavke zadatka da košarkaš može da dobaci obruč).\\
+
+Pošto su visina koša i košarkaša konstantne veličine možemo da transliramo ceo sistem tako da početna tačka centra lopte bude $(x_0,y_0) = (0,0)$, a tačka centra obruča $C = (d,h_k-\dfrac{_5}{^4}h)$.
+Zbog jednostavnosti zapisa uzećemo da je $H = h_k-\dfrac{_5}{^4}h$, odnosno $(x_f,H) = (d,H)$, gde $x_f$ predstavlja $x$ koordinatu lopte u trenutku kada lopta pada do visine obruča.\\
+
+
+*(OVDE IDE POPRAVLJENI DIJAGRAM!!! +naznačiti $y_{max}$)\\
+
+Po ovoj slici možemo primetiti da je polazni problem u stvari jedna vrsta problema kosog hica.
+
+\subsection{Kretnja lopte}
+
+*(TROUGAO SA SILAMA?)\\
+
+%Možda ovde ubaciti neke izvode tipa y_prim, y_prim_prim
+
+Po slici možemo da vidimo da na $x$ koordinatu ne utiče nijedna sila (otpor vazduha zanemarujemo), a pošto se lopta kreće brzinom zadatom pri šutu dolazimo da zaključka da važi:\\
+
+\[x(t) = x_0 + v_{\theta x}*t\]
+
+Gde su: $x_0 = 0$; $v_{\theta x} = v_\theta * \cos \theta$; odnosno:
+
+\[x(t) = v_\theta * \cos \theta*t\]
+
+Sa druge strane na $y$ koordinatu sve vreme utiče gravitacija. Uz početnu brzinu zadatu šutom možemo da zaključimo da važi:
+
+\[y(t) = y_0 + v_{\theta y}*t - \dfrac{g*t^2}{2}\]
+
+gde je $g \approx 9.81\dfrac{_m}{^{s^2}}$. Pošto važi da su: $y_0 = 0$; $v_{\theta y} = v_\theta * \sin \theta$; sledi:
+
+\[y(t) = v_{\theta}* \sin \theta*t - \dfrac{g}{2}*t^2\]
+
+\subsection{Uslovi za prolazak lopte kroz obruč}
+
+*(SLIKA:Lopta kako ulazi u obruć)\\
 
 
 \end{document}
