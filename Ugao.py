@@ -24,9 +24,9 @@ def main():
 
     min_teta = max(m.atan(H/d), 0)
     max_teta = to_radian(90)
-    for teta in np.arange(min_teta, max_teta, 0.1):
-        print(to_degree(teta))
-    #teta = to_radian(60)
+    #for teta in np.arange(min_teta, max_teta, to_radian(1)):
+    #    print(to_degree(teta))
+    teta = to_radian(60)
 
     v = nadji_brzinu(d, teta, H, g)
 
@@ -36,7 +36,8 @@ def main():
     #T = d / (v*m.cos(teta))
     #print(f"vreme leta lopte je {T:.4} sekundi")
 
-    #teta1 = nadji_ugao()
+    teta1 = nadji_ugao(d_1, v, H, g, teta)
+    print(to_degree(teta1))
 
 
 def to_degree(alfa):
@@ -50,9 +51,11 @@ def to_radian(alfa):
 def nadji_brzinu(d, teta, y, g):
     return m.sqrt((g * (d**2)) / (2 * (m.cos(teta) ** 2) * (d * m.tan(teta) - y)))
 
+
 def nadji_ugao(d, v, y, g, teta):
-    ugao1 = m.atan((v**2 + m.sqrt(v**4 - g*( g*d**2 + 2*y*(v**2) ) )) / (g*x))
-    ugao2 = m.atan()
+    ugao1 = m.atan((v**2 + m.sqrt(v**4 - g*(g*(d**2) + 2*y*(v**2)))) / (g*d))
+    #ugao2 = m.atan()
+    return ugao1
 
 
 if __name__ == "__main__":
