@@ -18,8 +18,9 @@ def main():
     g = 9.81
     h = 2.01
     #h = int(input("Unesite visinu igraca: "))
+    hk = 3.05
 
-    H = 3.05 - 5.0/4 * h
+    H = hk - 5.0/4 * h
     #print(f"Kos je za {H:.4} m visi od izbacaja kosarkasa")
     print(f"x = {d:.4}")
     print(f"y = {H:.4}")
@@ -33,17 +34,11 @@ def main():
     teta = to_radian(60)
 
     v = nadji_brzinu(d, teta, H, g)
-    #print(f"Brzina neophodna da bi lopta prosla kroz centar obruca pri uglu od "
-    #      f"{to_degree(teta):.4} stepeni je {v:.4} m/s^2")
+    #Brzina neophodna da bi lopta prosla kroz centar obruca pri uglu teta
     print(f"Vo = {v:.4}")
 
-    T = d / (v*m.cos(teta))
-    print(f"vreme leta lopte je {T:.4} sekundi")
-    vektor_t = np.arange(0, T, 0.01)
-    vektor_x = [x_koord(v, teta, t) for t in vektor_t]
-    vektor_y = [y_koord(v, teta, t, g) for t in vektor_t]
-    plt.plot(vektor_x, vektor_y)
-    plt.show()
+    #plot idealne putanje
+    plot_putanje(d, v, teta, g, d_1, d_2, H)
 
     teta1 = nadji_ugao(d_1, v, H, g, teta)
     print(to_degree(teta1))
@@ -63,6 +58,18 @@ def x_koord(v, teta, t):
 
 def y_koord(v, teta, t, g):
     return v * m.sin(teta) * t - g * t**2 / 2
+
+
+def plot_putanje(d, v, teta, g, d_1, d_2, H):
+    T = d / (v*m.cos(teta))
+    print(f"vreme leta lopte je {T:.4} sekundi")
+    vektor_t = np.arange(0, T, 0.01)
+    vektor_x = [x_koord(v, teta, t) for t in vektor_t]
+    vektor_y = [y_koord(v, teta, t, g) for t in vektor_t]
+    plt.plot(vektor_x, vektor_y)
+    #ivice obruca
+    plt.plot([d_1, d_2], [H, H], 'r.')
+    plt.show()
 
 
 def nadji_brzinu(d, teta, y, g):

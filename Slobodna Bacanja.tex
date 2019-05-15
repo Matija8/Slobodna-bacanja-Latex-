@@ -2,8 +2,8 @@
 
 \documentclass[a4paper, 12pt]{article}
 
-\usepackage[T2A]{fontenc} % enable Cyrillic fonts
-\usepackage[utf8x,utf8]{inputenc} % make weird characters work
+\usepackage[T2A]{fontenc}
+\usepackage[utf8x,utf8]{inputenc}
 \usepackage[serbian]{babel}
 %\usepackage[english,serbianc]{babel}
 \usepackage{amssymb}
@@ -13,6 +13,8 @@
 \usepackage{url}
 \usepackage[unicode]{hyperref}
 \hypersetup{colorlinks,citecolor=green,filecolor=green,linkcolor=blue,urlcolor=blue}
+\usepackage{graphicx}
+\graphicspath{ {./slike/} }
 
 \begin{document}
 
@@ -32,74 +34,75 @@ Osnovni pojmovi:\\
 $h$ - visina košarkaša koji izvodi slobodna bacanja;\\
 $h_k$ - visina koša;\\
 $\theta$ - ugao izbačaja;\\
-$v_\theta$ - brzina izbačaja za ugao $\theta$ pri kojoj lopta prolazi centrom obruča;\\
-$d$ - rastojanje između projekcija košarkaša i centra obruča na parket (rastojanje koša od košarkaša u odnosu na $x$ osu);\\
-$R_L$ - poluprečnik lopte;\\
-$R_O$ - poluprečnik obruča;\\
+$v_\theta$ - brzina izbačaja za ugao $\theta$ pri kojoj lopta prolazi kroz centar obruča;\\
+$d$ - rastojanje od košarkaša (y-ose) do centra obruča;\\
+$r_l$ - poluprečnik lopte;\\
+$r_o$ - poluprečnik obruča;\\
 
-*(DIJAGRAM SA ČIČA GLIŠAMA AKO MOGUĆE!!!)\\
+%\includegraphics[width=7cm, height=4cm]{pic1} %TODO
+
+\pagebreak
 
 
-\section{Prvi model}
+\section{Postavka}
 
 Podrazumevaćemo:
 \begin{itemize}
 
-\item da je poluprečnik lopte $R_L$ manji od poluprečnika obruča $R_O$:
-\[R_L<R_O\] %(3.1.1)
+\item da je poluprečnik lopte $r_l$ manji od poluprečnika obruča $r_o$:
+\[r_l<r_o\] %(3.1.1)
 
 \item da je $\theta$ između $0^0$ i $90^0$:\\
 \[0 < \theta < \pi/2\]
 
 \item da je visina koša $h_k$ veća od visine izbačaja košarkaša $\dfrac{_5}{^4}h$:\\
 \[h_k > \dfrac{_5}{^4}h\]  %\hfill \centerline{}
-(ovo nije obavezno ali olakšava crtanje slike)\\
+%(ovo nije obavezno ali olakšava crtanje slike)\\
 
 \end{itemize}
-
-%*(OVDE IDE DIJAGRAM!!!)\\
 
 
 Posmatraćemo centar lopte kao materijalnu tačku $(x,y)$ koja počinje svoj put iz tačke $(x_0,y_0) = (0,\dfrac{_5}{^4}h)$. Sile koje deluju na loptu su inicijalna sila šuta pod uglom $\theta$ u odnosu na parket i gravitacija.\\
 
-*(OVDE IDE DIJAGRAM!!!)\\
-
-Da bi lopta prošla centrom obruča poluprečnika $R_O$ mora biti ispunjeno da je $(x,y) = (d,h_k)$ pri padu lopte (lopta je na putanji prošla tačku maksimalne visine $y_{max}$;
+Da bi lopta prošla centrom obruča mora biti ispunjeno da je $(x,y) = (d,h_k)$ pri padu lopte (lopta je na putanji prošla tačku maksimalne visine $y_{max}$;
 Znamo iz postavke zadatka da košarkaš može da dobaci obruč).\\
 
 Pošto su visina koša i košarkaša konstantne veličine možemo da transliramo ceo sistem tako da početna tačka centra lopte bude $(x_0,y_0) = (0,0)$, a tačka centra obruča $C = (d,h_k-\dfrac{_5}{^4}h)$.
-Zbog jednostavnosti zapisa uzećemo da je $H = h_k-\dfrac{_5}{^4}h$, odnosno $(x_f,H) = (d,H)$, gde $x_f$ predstavlja $x$ koordinatu lopte u trenutku kada lopta pada do visine obruča.\\
+Zbog jednostavnosti zapisa uzećemo da je $H = h_k-\dfrac{_5}{^4}h$, odnosno $C = (d,H)$.\\
 
 
-*(OVDE IDE POPRAVLJENI DIJAGRAM!!! +naznačiti $y_{max}$)\\
+\includegraphics[width=7cm, height=4cm]{pic2} %TODO sredi + naznačiti $y_{max}$)\\
 
 Po ovoj slici možemo primetiti da je polazni problem u stvari jedna vrsta problema kosog hica.
 
 \subsection{Kretnja lopte}
 
-*(TROUGAO SA SILAMA?)\\
+Možemo da vidimo da na $x$ koordinatu lopte ne utiče nijedna sila (otpor vazduha zanemarujemo), a pošto se lopta kreće brzinom zadatom pri šutu dolazimo da zaključka da važi:\\
 
-%Možda ovde ubaciti neke izvode tipa y_prim, y_prim_prim
+\[x(t) = x_0 + v_{\theta x}\cdot t\]
 
-Po slici možemo da vidimo da na $x$ koordinatu ne utiče nijedna sila (otpor vazduha zanemarujemo), a pošto se lopta kreće brzinom zadatom pri šutu dolazimo da zaključka da važi:\\
+Gde su: $x_0 = 0$; $v_{\theta x} = v_\theta \cdot \cos \theta$; odnosno:
 
-\[x(t) = x_0 + v_{\theta x}*t\]
-
-Gde su: $x_0 = 0$; $v_{\theta x} = v_\theta * \cos \theta$; odnosno:
-
-\[x(t) = v_\theta * \cos \theta*t\]
+\[x(t) = v_\theta \cdot \cos \theta \cdot t\]
 
 Sa druge strane na $y$ koordinatu sve vreme utiče gravitacija. Uz početnu brzinu zadatu šutom možemo da zaključimo da važi:
 
-\[y(t) = y_0 + v_{\theta y}*t - \dfrac{g*t^2}{2}\]
+\[y(t) = y_0 + v_{\theta y} \cdot t - \dfrac{g \cdot t^2}{2}\]
 
-gde je $g \approx 9.81\dfrac{_m}{^{s^2}}$. Pošto važi da su: $y_0 = 0$; $v_{\theta y} = v_\theta * \sin \theta$; sledi:
+gde je $g \approx 9.81\dfrac{_m}{^{s^2}}$. Pošto važi da su: $y_0 = 0$; $v_{\theta y} = v_\theta \cdot \sin \theta$; sledi:
 
-\[y(t) = v_{\theta}* \sin \theta*t - \dfrac{g}{2}*t^2\]
+\[y(t) = v_{\theta} \cdot \sin \theta\cdot t - \dfrac{g}{2} \cdot t^2\]
+
+Dakle, koordinate centra lopte u svakom trenutku su opisane jednačinama:
+
+\[x(t) = v_\theta \cdot \cos \theta \cdot t\]
+
+\[y(t) = v_{\theta} \cdot \sin \theta \cdot t - \dfrac{g}{2} \cdot t^2\]
 
 \subsection{Uslovi za prolazak lopte kroz obruč}
 
-*(SLIKA:Lopta kako ulazi u obruć)\\
+Da bi lopta prošla kroz obruč ona mora prvo da prebaci visinu obruča. Sledi:
 
+\[\]
 
 \end{document}
