@@ -1,5 +1,6 @@
 import math as m
 import numpy as np
+import matplotlib.pyplot as plt
 
 # Opsti Podaci:
 # d - rastojanje od y ose do centra kosa
@@ -11,14 +12,17 @@ import numpy as np
 
 def main():
 
+    d = 4.15
     r = 0.1213
     obruc = 0.23
     g = 9.81
     h = 2.01
     #h = int(input("Unesite visinu igraca: "))
+
     H = 3.05 - 5.0/4 * h
     #print(f"Kos je za {H:.4} m visi od izbacaja kosarkasa")
-    d = 4.15
+    print(f"x = {d:.4}")
+    print(f"y = {H:.4}")
     d_1 = d - obruc + r
     d_2 = d + obruc - r
 
@@ -29,12 +33,17 @@ def main():
     teta = to_radian(60)
 
     v = nadji_brzinu(d, teta, H, g)
-
     #print(f"Brzina neophodna da bi lopta prosla kroz centar obruca pri uglu od "
     #      f"{to_degree(teta):.4} stepeni je {v:.4} m/s^2")
+    print(f"Vo = {v:.4}")
 
-    #T = d / (v*m.cos(teta))
-    #print(f"vreme leta lopte je {T:.4} sekundi")
+    T = d / (v*m.cos(teta))
+    print(f"vreme leta lopte je {T:.4} sekundi")
+    vektor_t = np.arange(0, T, 0.01)
+    vektor_x = [x_koord(v, teta, t) for t in vektor_t]
+    vektor_y = [y_koord(v, teta, t, g) for t in vektor_t]
+    plt.plot(vektor_x, vektor_y)
+    plt.show()
 
     teta1 = nadji_ugao(d_1, v, H, g, teta)
     print(to_degree(teta1))
@@ -48,13 +57,21 @@ def to_radian(alfa):
     return alfa * m.pi / 180
 
 
+def x_koord(v, teta, t):
+    return v * m.cos(teta) * t
+
+
+def y_koord(v, teta, t, g):
+    return v * m.sin(teta) * t - g * t**2 / 2
+
+
 def nadji_brzinu(d, teta, y, g):
     return m.sqrt((g * (d**2)) / (2 * (m.cos(teta) ** 2) * (d * m.tan(teta) - y)))
 
 
 def nadji_ugao(d, v, y, g, teta):
     ugao1 = m.atan((v**2 + m.sqrt(v**4 - g*(g*(d**2) + 2*y*(v**2)))) / (g*d))
-    #ugao2 = m.atan()
+    ugao2 = m.atan((v**2 + m.sqrt(v**4 - g*(g*(d**2) + 2*y*(v**2)))) / (g*d))
     return ugao1
 
 
