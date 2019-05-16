@@ -98,9 +98,42 @@ Dakle, koordinate centra lopte u svakom trenutku su opisane jednačinama:
 
 \[y(t) = v_{\theta} \cdot \sin \theta \cdot t - \dfrac{g}{2} \cdot t^2\]
 
+\subsection{Odnos brzine, ugla i daljine}
+
+Videli smo da položaj lopte zavisi od parametra vremena $t$. Nas zanima trenutak kada lopta prolazi kroz koš, odnosno $(x,y) = (d_c,H)$. Taj trenutak ćemo obeležiti sa $T$. Sledi:
+
+\[x(T) = v_\theta \cdot \cos \theta \cdot T = d_c\]
+
+\[y(T) = v_{\theta} \cdot \sin \theta \cdot T - \dfrac{g}{2} \cdot T^2 = H\]
+
+\pagebreak
+
+Naš zadatak je da:
+
+\begin{enumerate}
+\item Nadjemo za ugao $\theta$ takvo $v_{\theta}$ da lopta prolazi kroz centar obruča
+\item Da za to $v_{\theta}$ nadjemo najmanji ($\theta_1$) i najveći ($\theta_2$) ugao za koji lopta i dalje upada u koš
+\end{enumerate}
+
+Da bi našli $v_{\theta}$ koristimo prethodne dve jednačine. Iz prve jednačine:
+
+\[T = \dfrac{d_c}{v_\theta \cdot \cos \theta} \]
+
+Što dalje ubacujemo u drugu jednačinu:
+
+\[v_{\theta} \cdot \sin \theta \dfrac{d_c}{v_\theta \cdot \cos \theta} - \dfrac{g}{2} (\dfrac{d_c}{v_\theta \cdot \cos \theta})^2 = H\]
+
+\[\tan \theta \cdot d_c - \dfrac{g}{2} (\dfrac{d_c}{v_\theta \cdot \cos \theta})^2 = H\]
+
+Nakon sređivanja dolazimo do formule:
+
+
+
 \subsection{Uslovi za prolazak lopte kroz obruč}
 
-Da bi lopta prošla kroz obruč ona mora prvo da prebaci visinu obruča. Mi utičemo na ugao šuta.
+Da bi lopta prošla kroz obruč ona mora prvo da prebaci visinu obruča, pa onda da se spusti u isti. Iz toga zaključujemo da treba da uzmemo + znak u rešenju kvadratne, jer je to trenutak pada lopte u koš.
+
+Mi utičemo na ugao šuta.
 
 \section{Model: dvostruka iteracija}
 
