@@ -31,9 +31,20 @@ def main():
     d_2 = d + obruc - r
     print(d_1, d_2)
 
+    # TODO Pokazujemo da ugao mora biti veci od atan(H/d) da bi dobacili
+    #plot_putanje(d, 100, m.atan(H/d), g, d_1, d_2, H)
+    #plt.show()
+    #return
+
+    # TODO Pokazujemo da ugao mora biti veci od asin(H/d)
+    #v = 100
+    #plot_putanje(d, v, m.asin(m.sqrt(2*g*H/(v**2))), g, d_1, d_2, H)
+    #plt.show()
+    #return
+
     # Trazimo za svako moguce teta razliku teta2-teta1
     # teta su u rasponu od atan(H/d) do 90
-    min_teta = max(m.atan(H/d) + to_radian(1), to_radian(20))
+    min_teta = max(m.atan(H/d) + to_radian(1), to_radian(1))
     #min_teta = to_radian(45)
     max_teta = to_radian(80)
     optimalno_teta = min_teta
@@ -44,7 +55,10 @@ def main():
         # Brzina neophodna da bi lopta prosla kroz centar obruca pri uglu teta
         print(to_degree(teta))
         v = nadji_brzinu(d, teta, H, g)
-        #print(f"Vo = {v:.4}")
+        print(f"Vo = {v:.4}")
+        #plot_putanje(d, v, teta, g, d_1, d_2, H)
+        #plt.show()
+        #return
 
         (teta1, teta2) = nadji_uglove_iterativno(d_1, d_2, v, H, g, teta)
         print(f"Uglovi su {to_degree(teta1):.4}, {to_degree(teta2):.4}")
@@ -104,6 +118,9 @@ def nadji_brzinu(d, teta, y, g):
 
 
 def nadji_distancu(v, teta, H, g):
+    #ako vazi ovaj uslov onda lopta nece dostici visinu kosa
+    if (v*m.sin(teta))**2 <= 2*g*H:
+        return float('nan')
     # izrazili smo T preko y (y(T) = H)
     # uzimamo + u resenju kvadratne jne jer trazimo t kada je lopta u padu
     T = (v*m.sin(teta) + m.sqrt((v*m.sin(teta))**2 - 2*g*H)) / g
@@ -120,7 +137,8 @@ def nadji_uglove_iterativno(d_1, d_2, v, H, g, teta):
     # inicijalno d
     d_init = nadji_distancu(v, teta, H, g)
     if not d_1 < d_init < d_2:
-        raise Exception("Pri ovom uglu i brzini lopta ne upada u kos uopste!")
+        #raise Exception("Pri ovom uglu i brzini lopta ne upada u kos uopste!")
+        teta_1 = teta
     d = d_init
 
     while d_1 < d < d_2:
