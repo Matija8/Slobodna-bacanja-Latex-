@@ -98,7 +98,7 @@ Dakle, koordinate centra lopte u svakom trenutku su opisane jednačinama:
 
 \[y(t) = v_{\theta} \cdot \sin \theta \cdot t - \dfrac{g}{2} \cdot t^2\]
 
-\subsection{Odnos brzine, ugla i daljine}
+\subsection{Odnos brzine i daljine} %TODO izbaciti cdot?
 
 Videli smo da položaj lopte zavisi od parametra vremena $t$. Nas zanima trenutak kada lopta prolazi kroz koš, odnosno $(x,y) = (d_c,H)$. Taj trenutak ćemo obeležiti sa $T$. Sledi:
 
@@ -117,23 +117,63 @@ Naš zadatak je da:
 
 Da bi našli $v_{\theta}$ koristimo prethodne dve jednačine. Iz prve jednačine:
 
-\[T = \dfrac{d_c}{v_\theta \cdot \cos \theta} \]
+\[T = \dfrac{d_c}{v_\theta \cos \theta} \]
 
-Što dalje ubacujemo u drugu jednačinu:
+Dakle, vidimo odnos vremena i brzine. Gledamo sad drugu jednačinu:
 
-\[v_{\theta} \cdot \sin \theta \dfrac{d_c}{v_\theta \cdot \cos \theta} - \dfrac{g}{2} (\dfrac{d_c}{v_\theta \cdot \cos \theta})^2 = H\]
+\[v_{\theta} \sin \theta \cdot T - \dfrac{g}{2} \cdot T^2 = H\]
 
-\[\tan \theta \cdot d_c - \dfrac{g}{2} (\dfrac{d_c}{v_\theta \cdot \cos \theta})^2 = H\]
+\[\dfrac{g}{2} \cdot T^2 - v_{\theta} \sin \theta \cdot T - H = 0\]
 
-Nakon sređivanja dolazimo do formule:
+Iz ovoga dobijamo kvadratnu jednačinu po $T$:
 
+\[T_{1,2} = \dfrac{v_{\theta} \sin \theta \pm \sqrt[]{v_{\theta}^2 \sin^2 \theta - 2 g H}}{g}\]
 
+%Posmatramo putanju lopte kao kvadratnu funkciju po $T$.
+%TODO dijagram preseka kv. funkcije i prave y = H
+Možemo da vidimo da za vrednosti ${v_{\theta}^2 \sin^2 \theta < 2 g H}$ ne postoji rešenje u skupu realnih brojeva. To znači da lopta nikada neće dostići visinu H i samim tim nećemo postići koš.
+U slučaju da važi ${v_{\theta}^2 \sin^2 \theta = 2 g H}$, postoji jedno rešenje $T_1 = T_2 = T$. Ovo nam isto ne odgovara jer ne prebacujemo visinu obruča. Samo ćemo uspeti da dobacimo do centra koša odozdo. Nećemo postići pogodak.
+
+Na kraju dolazimo do konačnog slučaja ${v_{\theta}^2 \sin^2 \theta > 2 g H}$. Dobijamo dva rešenja $T_1$ i $T_2$. Ovo znači da je lopta u letu dosegla visinu H u trenutku $T_1$, dalje stigla do najviše tačke leta i pri padu u trenutku $T_2$ prošla savršeno kroz centar obruča. Pošto nas zanima trenutak prolaska kroz obruč uzimamo veće od dva $T$.
+
+\[T = \dfrac{v_{\theta} \sin \theta + \sqrt[]{v_{\theta}^2 \sin^2 \theta - 2 g H}}{g}\]
+
+Takođe ćemo napomenuti da ubuduće važi uslov ${v_{\theta}^2 \sin^2 \theta > 2 g H}$, tj.
+
+\[{\theta} > \arcsin(\sqrt[]{\dfrac{2 g H}{v_{\theta}^2}}) \]
+
+\pagebreak
+
+Nakon izjednačavanja $T$-ova dobijamo:
+
+\[\dfrac{d_c}{v_\theta \cos \theta} = \dfrac{v_{\theta} \sin \theta + \sqrt[]{v_{\theta}^2 \sin^2 \theta - 2 g H}}{g}\]
+
+Posle sređivanja: %TODO (možemo da kvadriramo jer su sve vrednosti pozitivne)
+
+\[v_\theta = \sqrt[]{\dfrac{g d_c^2}{2 \cos^2 \theta (d_c \tan \theta - H)}}\]
+
+Ovo inače predstavlja brzinu neophodnu da bi lopta pri padu prošla kroz tačku $(d_c,H)$.
+Inače tokom sređivanja izraza došli smo do novog uslova $d_c \tan \theta - H > 0$, odnosno:
+
+\[{\theta} > \arctan(\dfrac{H}{d_c}) \]
+
+Što je geometrijski logično jer da ne važi ovaj uslov mi bi ciljali ispod koša i uvek bi prebacili daljinu obruča pre nego što bi stigli na njegovu visinu.
+
+%TODO slika!
+\includegraphics[width=10cm, height=5cm]{pic3}
+
+%TODO broj formule
+Iz formule $v_\theta$ još možemo da zaključimo:
+
+\[d = \dfrac{v_\theta \cos \theta}{g}(v_{\theta} \sin \theta + \sqrt[]{v_{\theta}^2 \sin^2 \theta - 2 g H}) \]
+
+Gde smo namerno umesto $d_c$ stavili $d$, jer formula važi za proizvoljnu pozitivnu tačku na x-osi. Sa ove dve formule možemo da odredimo kojom brzinom treba da izbacimo loptu pri uglu $\theta$ da bi ona pala na nivo $H$ posle $d$ pređenog puta. Takođe možemo izračunati koju daljinu će lopta preći pre nego što padne na nivo $H$ ako joj je početna brzina bila $v$.
+
+\pagebreak
 
 \subsection{Uslovi za prolazak lopte kroz obruč}
 
-Da bi lopta prošla kroz obruč ona mora prvo da prebaci visinu obruča, pa onda da se spusti u isti. Iz toga zaključujemo da treba da uzmemo + znak u rešenju kvadratne, jer je to trenutak pada lopte u koš.
 
-Mi utičemo na ugao šuta.
 
 \section{Model: dvostruka iteracija}
 
