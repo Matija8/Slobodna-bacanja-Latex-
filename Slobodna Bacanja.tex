@@ -44,7 +44,7 @@ $r_o$ - poluprečnik obruča;\\
 \pagebreak
 
 
-\section{Postavka} %TODO
+\section{Modeliranje leta lopte} %TODO
 
 Podrazumevaćemo:
 \begin{itemize}
@@ -171,10 +171,33 @@ Gde smo namerno umesto $d_c$ stavili $d$, jer formula važi za proizvoljnu pozit
 
 \pagebreak
 
-\subsection{Uslovi za prolazak lopte kroz obruč}
+\subsection{Uslovi za prolazak lopte kroz obruč} %TODO
+
+Do sada smo loptu posmatrali kao tačku u prostoru (njen centar). Odredili smo dva uslova koja moraju biti ispunjena da bi lopta prošla kroz obruč:
+
+\[{\theta} > \arcsin(\sqrt[]{\dfrac{2 g H}{v_{\theta}^2}}) \]
+
+\[{\theta} > \arctan(\dfrac{H}{d_c}) \]
+
+Pre nego što se pozabavimo traženjem uglova $\theta_1$ i $\theta_2$ moramo da vidimo kada lopta upada u koš.
+
+\[TODO!!!\]
+
+\subsection{Uglovi $\theta_1$ i $\theta_2$} %TODO
+
+Pretpostavimo da $\theta \subseteq (0,\pi/2)$ ispunjava uslove i može se pogoditi koš ako šutiramo pod tim uglom. Postavlja se pitanje kako da odredimo $\theta_1$ i $\theta_2$ za dati ugao $\theta$?
+
+Očigledan način je da u
+
+\[TODO!!!\]
 
 
 
-\section{Model: dvostruka iteracija}
+\section{Model rešenja: dvostruka iteracija} %TODO
+
+Jednostavan i očigledan model rešenja je da za svaki mogući ugao $\theta$ nadjemo njihove $\theta_1$ i $\theta_2$ i da kao optimalni ugao izaberemo onaj čija je razlika
+$\theta_2 - \theta_1$ maksimalna. Vremenska složenost ovog rešenja je na taj način $O(n \cdot m)$ gde je $n$ broj uglova $\theta$, a $m$ prosek broja uglova $\theta_1$ i $\theta_2$. Naravno pošto uglovi pripadaju neprebrojivom skupu nećemo moći da proverimo rešenje za svaki ugao $\theta$. Moraćemo da diskretizujemo problem time što ćemo odrediti korak iteracije. Manji korak znači veća preciznost, ali i duži rad programa.
+
+\[TODO!!! + KOD!\]
 
 \end{document}
