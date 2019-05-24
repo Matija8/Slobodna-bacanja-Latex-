@@ -5,7 +5,6 @@
 \usepackage[T2A]{fontenc}
 \usepackage[utf8x,utf8]{inputenc}
 \usepackage[serbian]{babel}
-%\usepackage[english,serbianc]{babel}
 \usepackage{amssymb}
 \usepackage{amsmath}
 
@@ -18,17 +17,60 @@
 
 \begin{document}
 
-\title{Slobodna bacanja}
+%\title{\textbf{Slobodna bacanja}}
+%\author{Matija Miličević, Jovana Rađenović}
+%\subtitle{Seminarski rad iz predmeta Osnove matematičkog modeliranja}
+%\date{maj 2019}
+%\maketitle
 
-\author{Matija Miličević, Jovana Rađenović}
 
-\maketitle
+\begin{titlepage}
+
+\title{\textbf{Slobodna bacanja}}
+
+\begin{center}
+  \bfseries
+  \large Matematički fakultet
+  \vskip.2in
+   Unvirezitet u Beogradu
+  \vskip1.5in
+  \emph{\huge Slobodna bacanja}
+  \vskip.1in
+  \small Seminarski rad iz predmeta \\Osnove matematičkog modeliranja
+  \vskip.5in
+  \large Matija Miličević \quad Jovana Rađenović
+\end{center}
+
+\vskip1.4in
+
+\begin{minipage}{.3\textwidth}
+  \begin{flushleft}
+    \bfseries\large Profesor:\par \emph{Dr Milan Dražić}
+  \end{flushleft}
+\end{minipage}
+\hskip.4\textwidth
+\begin{minipage}{.3\textwidth}
+  \begin{flushleft}
+    \bfseries\large Asistent:\par \emph{Marija Ivanović}
+  \end{flushleft}
+\end{minipage}
+
+\vskip1.7in
+
+\centering
+\bfseries
+\Large maj 2019
+\end{titlepage}
+
+\pagebreak
+
+
 
 \section{Zadatak}
 
 Košarkaš prilikom slobodnog bacanja izbacuje loptu sa visine koja odgovara 5/4 sopstvene visine. Ako zanemarimo trenje vazduha, i ako je ugao bacanja $\theta$, da bi lopte prošle centrom obruča potrebna je brzina izbačaja $v_\theta$. Sa istom brzinom $v_\theta$ lopta će ući u koš i za bliske uglove $[\theta_1, \theta_2]$ (a da ne dodirne obruč). Za zadatu visinu košarkaša h odrediti onaj ugao bacanja $\theta$ koji obezbeđuje maksimalnu toleranciju $\theta_2 - \theta_1$. Rezultate tabelirati za omiljeni košarkaški klub ili reprezentaciju.
 
-\section{Pojmovi}
+\subsection{Pojmovi}
 
 Osnovni pojmovi:\\
 $h$ - visina košarkaša koji izvodi slobodna bacanja;\\
@@ -37,25 +79,33 @@ $\theta$ - ugao izbačaja;\\
 $v_\theta$ - brzina izbačaja za ugao $\theta$ pri kojoj lopta prolazi kroz centar obruča;\\
 $d_c$ - rastojanje od košarkaša (y-ose) do centra obruča;\\
 $r_l$ - poluprečnik lopte;\\
-$r_o$ - poluprečnik obruča;\\
+$r_o$ - poluprečnik obruča ($r_o>r_l$);\\
+
+
+\vskip1in
+{\huge Ovde ce stajati slika sa pojmovima}
+\vskip1in
 
 %\includegraphics[width=7cm, height=4cm]{pic1} %TODO
 
 \pagebreak
 
 
-\section{Modeliranje leta lopte} %TODO
+
+\section{Modeliranje leta lopte}
 
 Podrazumevaćemo:
 \begin{itemize}
 
-\item da je poluprečnik lopte $r_l$ manji od poluprečnika obruča $r_o$:
-\[r_l<r_o\] %(3.1.1)
+%\item poluprečnik lopte $r_l$ je manji od poluprečnika obruča $r_o$:
+%\[r_l<r_o\] %(3.1.1)
 
-\item da je $\theta$ između $0^0$ i $90^0$:\\
+\item lopta ide dirketno ka košu, ne skreće sa putanje levo ili desno. Odnosno, nema lateralne greške pri šutu.
+
+\item ugao $\theta$ je između $0^0$ i $90^0$:\\
 \[0 < \theta < \pi/2\]
 
-\item da je visina koša $h_k$ veća od visine izbačaja košarkaša $\dfrac{_5}{^4}h$:\\
+\item visina koša $h_k$ je veća od visine izbačaja košarkaša $\dfrac{_5}{^4}h$:\\
 \[h_k > \dfrac{_5}{^4}h\]  %\hfill \centerline{}
 %(ovo nije obavezno ali olakšava crtanje slike)\\
 
@@ -67,22 +117,27 @@ Posmatraćemo centar lopte kao materijalnu tačku $(x,y)$ koja počinje svoj put
 Pošto su visina koša i košarkaša konstantne veličine možemo da transliramo ceo sistem tako da početna tačka centra lopte bude $(x_0,y_0) = (0,0)$, a tačka centra obruča $C = (d_c,h_k-\dfrac{_5}{^4}h)$.
 Zbog jednostavnosti zapisa uzećemo da je $H = h_k-\dfrac{_5}{^4}h$, odnosno $C = (d_c,H)$.\\
 
-
-\includegraphics[width=10cm, height=5cm]{pic2} %TODO sredi + naznačiti $y_{max}$)\\
+\includegraphics[width=10cm, height=5cm]{pic2}
 
 Po ovoj slici možemo primetiti da je polazni problem u stvari jedna vrsta problema kosog hica.
 
 \pagebreak
 
-\subsection{Kretnja lopte}
 
-Možemo da vidimo da na $x$ koordinatu lopte ne utiče nijedna sila (otpor vazduha zanemarujemo), a pošto se lopta kreće brzinom zadatom pri šutu dolazimo da zaključka da važi:\\
+
+\subsection{Kretanje lopte}
+
+Nakon što je bačena, možemo primetiti da na $x$ koordinatu lopte više ne utiče nijedna sila (otpor vazduha zanemarujemo), a pošto se lopta kreće brzinom zadatom pri šutu dolazimo do zaključka da važi:\\
+
 
 \[x(t) = x_0 + v_{\theta x}\cdot t\]
 
+
 Gde su: $x_0 = 0$; $v_{\theta x} = v_\theta \cdot \cos \theta$; odnosno:
 
-\[x(t) = v_\theta \cdot \cos \theta \cdot t\]
+\begin{equation}
+x(t) = v_\theta \cdot \cos \theta \cdot t
+\end{equation}
 
 Sa druge strane na $y$ koordinatu sve vreme utiče gravitacija. Uz početnu brzinu zadatu šutom možemo da zaključimo da važi:
 
@@ -90,15 +145,18 @@ Sa druge strane na $y$ koordinatu sve vreme utiče gravitacija. Uz početnu brzi
 
 gde je $g \approx 9.81\dfrac{_m}{^{s^2}}$. Pošto važi da su: $y_0 = 0$; $v_{\theta y} = v_\theta \cdot \sin \theta$; sledi:
 
-\[y(t) = v_{\theta} \cdot \sin \theta\cdot t - \dfrac{g}{2} \cdot t^2\]
+\begin{equation}
+y(t) = v_{\theta} \cdot \sin \theta\cdot t - \dfrac{g}{2} \cdot t^2
+\end{equation}
 
 Dakle, koordinate centra lopte u svakom trenutku su opisane jednačinama:
+%TODO mozda (x,y) = (...)
 
 \[x(t) = v_\theta \cdot \cos \theta \cdot t\]
 
 \[y(t) = v_{\theta} \cdot \sin \theta \cdot t - \dfrac{g}{2} \cdot t^2\]
 
-\subsection{Odnos brzine i daljine} %TODO izbaciti cdot?
+\subsection{Odnos brzine, daljine i ugla} %TODO izbaciti cdot-ove?
 
 Videli smo da položaj lopte zavisi od parametra vremena $t$. Nas zanima trenutak kada lopta prolazi kroz koš, odnosno $(x,y) = (d_c,H)$. Taj trenutak ćemo obeležiti sa $T$. Sledi:
 
@@ -108,22 +166,24 @@ Videli smo da položaj lopte zavisi od parametra vremena $t$. Nas zanima trenuta
 
 \pagebreak
 
-Naš zadatak je da:
+Želimo da:
 
 \begin{enumerate}
 \item Nadjemo za ugao $\theta$ takvo $v_{\theta}$ da lopta prolazi kroz centar obruča
-\item Da za to $v_{\theta}$ nadjemo najmanji ($\theta_1$) i najveći ($\theta_2$) ugao za koji lopta i dalje upada u koš
+\item Nadjemo najmanji ($\theta_1$) i najveći ($\theta_2$) ugao za koji lopta bačena tom brzinom $v_{\theta}$ i dalje upada u koš
 \end{enumerate}
 
-Da bi našli $v_{\theta}$ koristimo prethodne dve jednačine. Iz prve jednačine:
+Da bismo našli $v_{\theta}$ koristimo prethodne dve jednačine. Iz prve jednačine:
 
-\[T = \dfrac{d_c}{v_\theta \cos \theta} \]
+\begin{equation}
+T = \dfrac{d_c}{v_\theta \cos \theta}
+\end{equation}
 
 Dakle, vidimo odnos vremena i brzine. Gledamo sad drugu jednačinu:
 
 \[v_{\theta} \sin \theta \cdot T - \dfrac{g}{2} \cdot T^2 = H\]
 
-\[\dfrac{g}{2} \cdot T^2 - v_{\theta} \sin \theta \cdot T - H = 0\]
+\[\dfrac{g}{2} \cdot T^2 - v_{\theta} \sin \theta \cdot T + H = 0\]
 
 Iz ovoga dobijamo kvadratnu jednačinu po $T$:
 
@@ -131,59 +191,146 @@ Iz ovoga dobijamo kvadratnu jednačinu po $T$:
 
 %Posmatramo putanju lopte kao kvadratnu funkciju po $T$.
 %TODO dijagram preseka kv. funkcije i prave y = H
+
 Možemo da vidimo da za vrednosti ${v_{\theta}^2 \sin^2 \theta < 2 g H}$ ne postoji rešenje u skupu realnih brojeva. To znači da lopta nikada neće dostići visinu H i samim tim nećemo postići koš.
 U slučaju da važi ${v_{\theta}^2 \sin^2 \theta = 2 g H}$, postoji jedno rešenje $T_1 = T_2 = T$. Ovo nam isto ne odgovara jer ne prebacujemo visinu obruča. Samo ćemo uspeti da dobacimo do centra koša odozdo. Nećemo postići pogodak.
 
 Na kraju dolazimo do konačnog slučaja ${v_{\theta}^2 \sin^2 \theta > 2 g H}$. Dobijamo dva rešenja $T_1$ i $T_2$. Ovo znači da je lopta u letu dosegla visinu H u trenutku $T_1$, dalje stigla do najviše tačke leta i pri padu u trenutku $T_2$ prošla savršeno kroz centar obruča. Pošto nas zanima trenutak prolaska kroz obruč uzimamo veće od dva $T$.
 
-\[T = \dfrac{v_{\theta} \sin \theta + \sqrt[]{v_{\theta}^2 \sin^2 \theta - 2 g H}}{g}\]
+\begin{equation}
+T = \dfrac{v_{\theta} \sin \theta + \sqrt[]{v_{\theta}^2 \sin^2 \theta - 2 g H}}{g}
+\end{equation}
 
 Takođe ćemo napomenuti da ubuduće važi uslov ${v_{\theta}^2 \sin^2 \theta > 2 g H}$, tj.
 
-\[{\theta} > \arcsin(\sqrt[]{\dfrac{2 g H}{v_{\theta}^2}}) \]
+\begin{equation}
+{\theta} > \arcsin(\sqrt[]{\dfrac{2 g H}{v_{\theta}^2}})
+\end{equation}
 
 \pagebreak
 
-Nakon izjednačavanja $T$-ova dobijamo:
+Nakon što izjednačimo $T$ iz (3) i (4) dobijamo:
 
 \[\dfrac{d_c}{v_\theta \cos \theta} = \dfrac{v_{\theta} \sin \theta + \sqrt[]{v_{\theta}^2 \sin^2 \theta - 2 g H}}{g}\]
 
-Posle sređivanja: %TODO (možemo da kvadriramo jer su sve vrednosti pozitivne)
+\[\dfrac{g d_c}{v_\theta \cos \theta} - v_{\theta} \sin \theta = \sqrt[]{v_{\theta}^2 \sin^2 \theta - 2 g H}\]
 
-\[v_\theta = \sqrt[]{\dfrac{g d_c^2}{2 \cos^2 \theta (d_c \tan \theta - H)}}\]
+\[\dfrac{g^2 d_c^2}{v_\theta^2 \cos^2 \theta} - 2 g d_c \tan \theta + v_{\theta}^2 \sin^2 \theta = v_{\theta}^2 \sin^2 \theta - 2 g H\]
 
-Ovo inače predstavlja brzinu neophodnu da bi lopta pri padu prošla kroz tačku $(d_c,H)$.
-Inače tokom sređivanja izraza došli smo do novog uslova $d_c \tan \theta - H > 0$, odnosno:
 
-\[{\theta} > \arctan(\dfrac{H}{d_c}) \]
+\[\dfrac{g^2 d_c^2}{v_\theta^2 \cos^2 \theta} - 2 g d_c \tan \theta + 2 g H = 0\]
+
+Možemo ceo izraz da delimo sa $g$ jer znamo da je veće od 0:
+
+\begin{equation}
+\dfrac{g d_c^2}{v_\theta^2 \cos^2 \theta} - 2 d_c \tan \theta + 2 H = 0
+\end{equation}
+
+\[\dfrac{g d_c^2}{v_\theta^2 \cos^2 \theta} = 2 (d_c \tan \theta - H)\]
+
+\[\dfrac{1}{v_\theta^2} = \dfrac{2 \cos^2 \theta (d_c \tan \theta - H)}{g d_c^2}\]
+
+\[v_\theta^2 = \dfrac{g d_c^2}{2 \cos^2 \theta (d_c \tan \theta - H)}\]
+
+\vskip.4in
+
+Pošto znamo da važi $g$, $d$ > 0, sledi:
+
+\begin{equation}
+v_\theta = \sqrt[]{\dfrac{g d_c^2}{2 \cos^2 \theta (d_c \tan \theta - H)}}
+\end{equation}
+
+\vskip.2in
+
+Ovo inače predstavlja brzinu neophodnu da bi lopta pri padu prošla kroz tačku $(d_c,H)$. Naravno pri uslovu da se šutira pod uglom $\theta$.
+Tokom sređivanja izraza došli smo do novog uslova $d_c \tan \theta - H > 0$, odnosno:
+
+\begin{equation}
+{\theta} > \arctan(\dfrac{H}{d_c})
+\end{equation}
+
+\pagebreak
 
 Što je geometrijski logično jer da ne važi ovaj uslov mi bi ciljali ispod koša i uvek bi prebacili daljinu obruča pre nego što bi stigli na njegovu visinu.
 
 %TODO slika!
 \includegraphics[width=10cm, height=5cm]{pic3}
 
-%TODO broj formule
-Iz formule $v_\theta$ još možemo da zaključimo:
 
-\[d = \dfrac{v_\theta \cos \theta}{g}(v_{\theta} \sin \theta + \sqrt[]{v_{\theta}^2 \sin^2 \theta - 2 g H}) \]
+Izjednačavanjem (3) i (4) još možemo da izvedemo dve formule. Do prve dolazimo putem:
 
-Gde smo namerno umesto $d_c$ stavili $d$, jer formula važi za proizvoljnu pozitivnu tačku na x-osi. Sa ove dve formule možemo da odredimo kojom brzinom treba da izbacimo loptu pri uglu $\theta$ da bi ona pala na nivo $H$ posle $d$ pređenog puta. Takođe možemo izračunati koju daljinu će lopta preći pre nego što padne na nivo $H$ ako joj je početna brzina bila $v$.
+\[\dfrac{d_c}{v_\theta \cos \theta} = \dfrac{v_{\theta} \sin \theta + \sqrt[]{v_{\theta}^2 \sin^2 \theta - 2 g H}}{g}\]
+
+\[d_c = v_\theta \cos \theta (\dfrac{v_{\theta} \sin \theta + \sqrt[]{v_{\theta}^2 \sin^2 \theta - 2 g H}}{g})\]
+
+Odnosno:
+
+\begin{equation}
+d = \dfrac{v \cos \theta}{g}(v \sin \theta + \sqrt[]{v^2 \sin^2 \theta - 2 g H})
+\end{equation}
+
+\vskip.2in
+
+Gde smo namerno zamenili $d_c$ i $v_\theta$ sa $d$ i $v$, jer formula važi za proizvoljne pozitivne vrednosti. Ovom formulom možemo da izračunamo daljinu koju će lopta preći pri šutu sa početnom brzinom $v$ i uglom $\theta$, pre nego što padne na visinu $H$. Jasno je da formulu (7) takođe možemo da tumačimo sa proizvoljnim $d$ umesto daljine do sredine koša. Videćemo kasnije svrhu ovih formula.
+
+Drugu formulu dobijamo iz (6):
+
+\[ \dfrac{g d^2}{v^2 \cos^2 \theta} - 2 d \tan \theta + 2 H = 0 \]
+
+\[ \dfrac{g d^2 (1 + \tan^2 \theta)}{v^2} - 2 d \tan \theta + 2 H = 0 \]
+
+\[ \dfrac{g d^2}{v^2} \tan^2 \theta - 2 d \tan \theta + 2 H + \dfrac{g d^2}{v^2} = 0 \]
 
 \pagebreak
 
-\subsection{Uslovi za prolazak lopte kroz obruč} %TODO
+\[ g d^2 \tan^2 \theta - 2 d v^2 \tan \theta + 2 H + g d^2 = 0 \]
+
+Ovo je očigledno kvadratna jednačina po $\tan \theta$:
+
+\[ \tan \theta = \dfrac{2 d v^2 \pm \sqrt[]{4 d^2 v^4 - 4 (g d^2)(2 H + g d^2)}}{2 g d^2} \]
+
+Nakon izbacivanja $2d$ ispred korena i skraćivanja:
+
+\[ \tan \theta = \dfrac{v^2 \pm \sqrt[]{v^4 - g(2 H - g d^2)}}{g d} \]
+
+\begin{equation}
+\theta = \arctan (\dfrac{v^2 \pm \sqrt[]{v^4 - g(2 H - g d^2)}}{g d})
+\end{equation}
+
+Ovom formulom možemo da odredimo pod kojim uglom je potrebno izbaciti loptu da bi pri brzini $v$ prešla put $d$ pre nego što se spusti na visinu $H$.
+Očigledno ako važi $v^4 - g(2 H - g d^2) < 0$ brzina lopte je premala da bi prešla daljinu $d$ pre nego što padne ispod $H$. U slučaju $v^4 - g(2 H - g d^2) = 0$ postoji jedan ugao $\theta$ kojim postižemo ovu daljinu, a za $v^4 - g(2 H - g d^2) > 0$ postoje dva ugla.
+
+
+%TODO SLIKA!!!!! + legenda
+
+\vskip1in
+{\huge Ovde ce stajati dijagram dva ugla}
+\vskip1in
+
+
+Sa formulama (7), (9) i (10) možemo da vidimo odnos brzine, daljine i ugla pri putanji naše lopte.
+
+\pagebreak
+
+
+
+\section{Uslovi za prolazak lopte kroz obruč} %TODO
 
 Do sada smo loptu posmatrali kao tačku u prostoru (njen centar). Odredili smo dva uslova koja moraju biti ispunjena da bi lopta prošla kroz obruč:
 
-\[{\theta} > \arcsin(\sqrt[]{\dfrac{2 g H}{v_{\theta}^2}}) \]
+\[{\theta} > \arcsin(\sqrt[]{\dfrac{2 g H}{v_{\theta}^2}}) \quad (5), \quad {\theta} > \arctan(\dfrac{H}{d_c}) \quad (8) \]
 
-\[{\theta} > \arctan(\dfrac{H}{d_c}) \]
+Pre nego što se pozabavimo traženjem uglova $\theta_1$ i $\theta_2$ moramo da vidimo koji još uslovi moraju biti ispunjeni da bi lopta upala u koš. Po postavci zadatka nas samo zanimaju slučajevi kada lopta ne dodiruje obruč, odbici koji ulaze u koš se ne priznaju. Pošto podrazumevamo da nema lateralne greške nas samo zanima prednji i zadnji deo obruča.
 
-Pre nego što se pozabavimo traženjem uglova $\theta_1$ i $\theta_2$ moramo da vidimo kada lopta upada u koš.
+Da bi lopta prošla kroz 
 
-\[TODO!!!\]
 
-\subsection{Uglovi $\theta_1$ i $\theta_2$} %TODO
+
+\pagebreak
+
+
+
+\section{Uglovi $\theta_1$ i $\theta_2$} %TODO
 
 Pretpostavimo da $\theta \subseteq (0,\pi/2)$ ispunjava uslove i može se pogoditi koš ako šutiramo pod tim uglom. Postavlja se pitanje kako da odredimo $\theta_1$ i $\theta_2$ za dati ugao $\theta$?
 
@@ -193,9 +340,9 @@ Očigledan način je da u
 
 
 
-\section{Model rešenja: dvostruka iteracija} %TODO
+\section{Model rešenja: Iterativni metod} %TODO
 
-Jednostavan i očigledan model rešenja je da za svaki mogući ugao $\theta$ nadjemo njihove $\theta_1$ i $\theta_2$ i da kao optimalni ugao izaberemo onaj čija je razlika
+Jednostavan i očigledan model rešenja je da za svaki mogući ugao $\theta$ nadjemo $\theta_1$ i $\theta_2$ i da kao optimalni ugao izaberemo onaj čija je razlika
 $\theta_2 - \theta_1$ maksimalna. Vremenska složenost ovog rešenja je na taj način $O(n \cdot m)$ gde je $n$ broj uglova $\theta$, a $m$ prosek broja uglova $\theta_1$ i $\theta_2$. Naravno pošto uglovi pripadaju neprebrojivom skupu nećemo moći da proverimo rešenje za svaki ugao $\theta$. Moraćemo da diskretizujemo problem time što ćemo odrediti korak iteracije. Manji korak znači veća preciznost, ali i duži rad programa.
 
 \[TODO!!! + KOD!\]
