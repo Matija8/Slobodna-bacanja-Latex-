@@ -112,9 +112,9 @@ Podrazumevaćemo:
 \end{itemize}
 
 
-Posmatraćemo centar lopte kao materijalnu tačku $(x,y)$ koja počinje svoj put iz tačke $(x_0,y_0) = (0,\dfrac{_5}{^4}h)$. Da bi lopta prošla kroz centar obruča u jednom trenutku mora važiti $(x,y) = C$, gde je $C = (d_c,h_k)$.\\
+Posmatraćemo centar lopte kao materijalnu tačku $L = (x,y)$ koja počinje svoj put iz tačke $(x_0,y_0) = (0,\dfrac{_5}{^4}h)$. Da bi lopta prošla kroz centar obruča u jednom trenutku mora važiti $L = C$, gde je $C = (d_c,h_k)$.\\
 
-Pošto su visina koša i košarkaša konstantne veličine možemo da transliramo ceo sistem tako da početna tačka centra lopte bude $(x_0,y_0) = (0,0)$, a tačka centra obruča $C = (d_c,h_k-\dfrac{_5}{^4}h)$.
+Pošto su visina koša i košarkaša konstantne veličine možemo da transliramo ceo sistem tako da početna tačka centra lopte bude $L = (x_0,y_0) = (0,0)$, a tačka centra obruča $C = (d_c,h_k-\dfrac{_5}{^4}h)$.
 Zbog jednostavnosti zapisa uzećemo da je $H = h_k-\dfrac{_5}{^4}h$, odnosno $C = (d_c,H)$.\\
 
 \includegraphics[width=10cm, height=5cm]{pic2}
@@ -127,7 +127,7 @@ Po ovoj slici možemo primetiti da je polazni problem u stvari jedna vrsta probl
 
 \subsection{Kretanje lopte}
 
-Nakon što je bačena, možemo primetiti da na $x$ koordinatu lopte više ne utiče nijedna sila (otpor vazduha zanemarujemo), a pošto se lopta kreće brzinom zadatom pri šutu dolazimo do zaključka da važi:\\
+Nakon što je bačena, možemo primetiti da na $x$-koordinatu lopte više ne utiče nijedna sila (otpor vazduha zanemarujemo), a pošto se lopta kreće brzinom zadatom pri šutu dolazimo do zaključka da važi:\\
 
 
 \[x(t) = x_0 + v_{\theta x}\cdot t\]
@@ -139,7 +139,7 @@ Gde su: $x_0 = 0$; $v_{\theta x} = v_\theta \cdot \cos \theta$; odnosno:
 x(t) = v_\theta \cdot \cos \theta \cdot t
 \end{equation}
 
-Sa druge strane na $y$ koordinatu sve vreme utiče gravitacija. Uz početnu brzinu zadatu šutom možemo da zaključimo da važi:
+Sa druge strane na $y$-koordinatu sve vreme utiče gravitacija. Uz početnu brzinu zadatu šutom možemo da zaključimo da važi:
 
 \[y(t) = y_0 + v_{\theta y} \cdot t - \dfrac{g \cdot t^2}{2}\]
 
@@ -149,16 +149,13 @@ gde je $g \approx 9.81\dfrac{_m}{^{s^2}}$. Pošto važi da su: $y_0 = 0$; $v_{\t
 y(t) = v_{\theta} \cdot \sin \theta\cdot t - \dfrac{g}{2} \cdot t^2
 \end{equation}
 
-Dakle, koordinate centra lopte u svakom trenutku su opisane jednačinama:
-%TODO mozda (x,y) = (...)
+Dakle, koordinate centra lopte $L$ u nekom trenutku $t$ su:
 
-\[x(t) = v_\theta \cdot \cos \theta \cdot t\]
-
-\[y(t) = v_{\theta} \cdot \sin \theta \cdot t - \dfrac{g}{2} \cdot t^2\]
+\[L(t) = (x(t), y(t)) = (v_\theta \cdot \cos \theta \cdot t, v_{\theta} \cdot \sin \theta \cdot t - \dfrac{g}{2} \cdot t^2)\]
 
 \subsection{Odnos brzine, daljine i ugla} %TODO izbaciti cdot-ove?
 
-Videli smo da položaj lopte zavisi od parametra vremena $t$. Nas zanima trenutak kada lopta prolazi kroz koš, odnosno $(x,y) = (d_c,H)$. Taj trenutak ćemo obeležiti sa $T$. Sledi:
+Videli smo da položaj lopte zavisi od parametra vremena $t$. Nas zanima trenutak kada lopta prolazi kroz koš, odnosno $(x,y) = (d_c,H)$. Taj trenutak ćemo obeležiti sa $T$. Iz (1) i (2) sledi:
 
 \[x(T) = v_\theta \cdot \cos \theta \cdot T = d_c\]
 
@@ -169,7 +166,7 @@ Videli smo da položaj lopte zavisi od parametra vremena $t$. Nas zanima trenuta
 Želimo da:
 
 \begin{enumerate}
-\item Nadjemo za ugao $\theta$ takvo $v_{\theta}$ da lopta prolazi kroz centar obruča
+\item Nadjemo za ugao $\theta$ takvo $v_{\theta}$ da lopta prolazi kroz centar obruča $C$
 \item Nadjemo najmanji ($\theta_1$) i najveći ($\theta_2$) ugao za koji lopta bačena tom brzinom $v_{\theta}$ i dalje upada u koš
 \end{enumerate}
 
@@ -257,7 +254,7 @@ Tokom sređivanja izraza došli smo do novog uslova $d_c \tan \theta - H > 0$, o
 \includegraphics[width=10cm, height=5cm]{pic3}
 
 
-Izjednačavanjem (3) i (4) još možemo da izvedemo dve formule. Do prve dolazimo putem:
+Izjednačavanjem (3) i (4) možemo da izvedemo još dve formule. Do prve dolazimo putem:
 
 \[\dfrac{d_c}{v_\theta \cos \theta} = \dfrac{v_{\theta} \sin \theta + \sqrt[]{v_{\theta}^2 \sin^2 \theta - 2 g H}}{g}\]
 
@@ -289,7 +286,7 @@ Ovo je očigledno kvadratna jednačina po $\tan \theta$:
 
 \[ \tan \theta = \dfrac{2 d v^2 \pm \sqrt[]{4 d^2 v^4 - 4 (g d^2)(2 H + g d^2)}}{2 g d^2} \]
 
-Nakon izbacivanja $2d$ ispred korena i skraćivanja:
+Nakon izvlačenja $2d$ ispred korena i skraćivanja:
 
 \[ \tan \theta = \dfrac{v^2 \pm \sqrt[]{v^4 - g(2 H - g d^2)}}{g d} \]
 
@@ -316,14 +313,34 @@ Sa formulama (7), (9) i (10) možemo da vidimo odnos brzine, daljine i ugla pri 
 
 \section{Uslovi za prolazak lopte kroz obruč} %TODO
 
-Do sada smo loptu posmatrali kao tačku u prostoru (njen centar). Odredili smo dva uslova koja moraju biti ispunjena da bi lopta prošla kroz obruč:
+Do sada smo loptu posmatrali kao tačku u 2-D prostoru $L = (x,y)$. Odredili smo dva uslova koja moraju biti ispunjena da bi lopta prošla kroz obruč:
 
 \[{\theta} > \arcsin(\sqrt[]{\dfrac{2 g H}{v_{\theta}^2}}) \quad (5), \quad {\theta} > \arctan(\dfrac{H}{d_c}) \quad (8) \]
 
 Pre nego što se pozabavimo traženjem uglova $\theta_1$ i $\theta_2$ moramo da vidimo koji još uslovi moraju biti ispunjeni da bi lopta upala u koš. Po postavci zadatka nas samo zanimaju slučajevi kada lopta ne dodiruje obruč, odbici koji ulaze u koš se ne priznaju. Pošto podrazumevamo da nema lateralne greške nas samo zanima prednji i zadnji deo obruča.
 
-Da bi lopta prošla kroz 
+Da bi lopta prošla kroz obruč u trenutku $T$ ($y = H$) udaljenost njenog centra od prednjeg i zadnjeg dela obruča mora biti veća od poluprečnika lopte $r_l$, ali njen centar mora i dalje biti izmedju ove dve tačke. Koordinatne tačke ovih delova obruča možemo lako odrediti. Ako je centar obruča $C = (d_c,H)$, a poluprečnik obruča $r_o$, onda je bliži deo obruča $O_1 = (d_c - r_o, H)$, a dalji deo obruča $O_2 = (d_c + r_o, H)$.
 
+Pošto je na svom putu lopta krenula da pada, možemo da primetimo da kako se njena $x$-koordinata povećava, tako se $y$-koordinata smanjuje. To znači da u trenutku $T$ ona će imati maksimalnu $x$-koordinatu pre nego što prođe (ili ne prođe) kroz obruč, tj. $L = (x_{max},H)$. Dakle da bi lopta u trenutku $T$ prošla kroz obruč mora da važi:
+
+\[ d_c - r_o < x_{max} - r_l \quad \land \quad x_{max} + r_l < d_c + r_o \]
+
+%Odnosno:
+
+\[d_c - r_o + r_l \quad < \quad x_{max} \quad < \quad d_c - r_l + r_o \]
+
+%\vskip.2in
+
+Ubuduće ćemo ove dve tačke zapisivati kao $d_1 = d_c - r_o + r_l$ i $d_2 = d_c - r_l + r_o$
+
+\begin{equation}
+d_1 < x_{max} < d_2
+\end{equation}
+
+Ovo je bio uslov prolaska lopte u trenutku $T$. Nas sad zanima da li je lopta mogla udariti u obruč pre tog trenutka. Za dalji deo obruča očigledno je odgovor ne, jer ako centar lopte nije prebacio tačku $d_2$ u trenutku $T$ sigurno nije ni u nekom ranijem trenutku kada je lopta bila udaljenija od $O_2$. Dalje se logično postavlja pitanje za $O_1$.
+
+
+\[TODO!!!\]
 
 
 \pagebreak
@@ -334,7 +351,9 @@ Da bi lopta prošla kroz
 
 Pretpostavimo da $\theta \subseteq (0,\pi/2)$ ispunjava uslove i može se pogoditi koš ako šutiramo pod tim uglom. Postavlja se pitanje kako da odredimo $\theta_1$ i $\theta_2$ za dati ugao $\theta$?
 
-Očigledan način je da u
+Očigledan način je da iskoristimo formulu (10).
+
+Druga opcija je iterativni metod.
 
 \[TODO!!!\]
 
@@ -343,7 +362,13 @@ Očigledan način je da u
 \section{Model rešenja: Iterativni metod} %TODO
 
 Jednostavan i očigledan model rešenja je da za svaki mogući ugao $\theta$ nadjemo $\theta_1$ i $\theta_2$ i da kao optimalni ugao izaberemo onaj čija je razlika
-$\theta_2 - \theta_1$ maksimalna. Vremenska složenost ovog rešenja je na taj način $O(n \cdot m)$ gde je $n$ broj uglova $\theta$, a $m$ prosek broja uglova $\theta_1$ i $\theta_2$. Naravno pošto uglovi pripadaju neprebrojivom skupu nećemo moći da proverimo rešenje za svaki ugao $\theta$. Moraćemo da diskretizujemo problem time što ćemo odrediti korak iteracije. Manji korak znači veća preciznost, ali i duži rad programa.
+$\theta_2 - \theta_1$ maksimalna.
+
+\vskip.2in
+
+\[TODO!!!\]
+
+Vremenska složenost ovog rešenja je na taj način $O(n \cdot m)$ gde je $n$ broj uglova $\theta$, a $m$ prosek broja uglova $\theta_1$ i $\theta_2$. Naravno pošto uglovi pripadaju neprebrojivom skupu nećemo moći da proverimo rešenje za svaki ugao $\theta$. Moraćemo da diskretizujemo problem time što ćemo odrediti korak iteracije. Manji korak znači veća preciznost, ali i duži rad programa.
 
 \[TODO!!! + KOD!\]
 
