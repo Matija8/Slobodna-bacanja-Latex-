@@ -7,7 +7,7 @@
 \usepackage[serbian]{babel}
 \usepackage{amssymb}
 \usepackage{amsmath}
-
+\usepackage{listingsutf8}
 \usepackage{color}
 \usepackage{url}
 \usepackage[unicode]{hyperref}
@@ -16,13 +16,6 @@
 \graphicspath{ {./slike/} }
 
 \begin{document}
-
-%\title{\textbf{Slobodna bacanja}}
-%\author{Matija Miličević, Jovana Rađenović}
-%\subtitle{Seminarski rad iz predmeta Osnove matematičkog modeliranja}
-%\date{maj 2019}
-%\maketitle
-
 
 \begin{titlepage}
 
@@ -371,5 +364,11 @@ $\theta_2 - \theta_1$ maksimalna.
 Vremenska složenost ovog rešenja je na taj način $O(n \cdot m)$ gde je $n$ broj uglova $\theta$, a $m$ prosek broja uglova $\theta_1$ i $\theta_2$. Naravno pošto uglovi pripadaju neprebrojivom skupu nećemo moći da proverimo rešenje za svaki ugao $\theta$. Moraćemo da diskretizujemo problem time što ćemo odrediti korak iteracije. Manji korak znači veća preciznost, ali i duži rad programa.
 
 \[TODO!!! + KOD!\]
+
+\pagebreak
+
+\section{Programski kod (Python)}
+
+\lstinputlisting[language=Python]{teta1_2.py}
 
 \end{document}

@@ -19,13 +19,13 @@ def to_radian(alfa):
 
 
 if __name__ == "__main__":
-    d_c = 4.15      # daljina do centra obruča
-    r_l = 0.1213    # poluprečnik lopte
-    r_o = 0.23      # poluprečnik obruča
+    d_c = 4.15      # daljina do centra obruca
+    r_l = 0.1213    # poluprecnik lopte
+    r_o = 0.23      # poluprecnik obruca
     g = 9.81        # gravitaciona konstanta
 
-    hk = 3.05       # visina koša
-    h = 2.01        # visina košarkaša
-    H = hk-5.0/4*h  # popravljena visina koša
+    hk = 3.05       # visina kosa
+    h = 2.01        # visina kosarkasa
+    H = hk-5.0/4*h  # popravljena visina kosa
     (teta_1, teta_2) = teta1_teta2(d_c, r_l, r_o, g, H)
     print(teta_1, teta_2)
