@@ -356,12 +356,12 @@ Ovo je bio uslov prolaska lopte u trenutku $T$. Nas sad zanima da li je lopta mo
 Udaljenost centra lopte od $O_1$ mora biti veće od poluprečnika lopte u svakom trenutku. U suprotnom to znači da je došlo do kontakta izmedju lopte i obruča. Korišćenjem pitagorine teoreme, ovo se matematički može zapisati kao:
 
 \begin{equation}
-(x - d_1)^2 + (y - H)^2 > r^2
+(x - (d_c - r_o))^2 + (y - H)^2 > r_l^2
 \end{equation}
 
-Gde su $x$ i $y$ koordinate lopte za bilo koje $t \in (0, T)$. Ovaj uslov se geometrijski može interpretirati tako da putanja lopte ne sme da preseče kružnicu $K: (x - d_1)^2 + (y - H)^2 = r^2$. Menjanjem $x$ i $y$ sa $(3)$ i $(4)$ možemo da formulu kružnice pretvorimo u funkciju po $t$. Odavde ako nadjemo za $t$ bar jedno realno rešenje znamo da postoji presek putanje lopte i kružnice $K$ što znači da lopta udara u obruč i znamo za taj šut da je promašaj. Postoji samo jedan problem, dobijena formula je stepena 4:
+Gde su $x$ i $y$ koordinate lopte za bilo koje $t \in (0, T)$. Ovaj uslov se geometrijski može interpretirati tako da putanja lopte ne sme da preseče kružnicu $K: (x - d_c + r_o)^2 + (y - H)^2 = r_l^2$. Menjanjem $x$ i $y$ sa $(3)$ i $(4)$ možemo da formulu kružnice pretvorimo u funkciju po $t$. Odavde ako nadjemo za $t$ bar jedno realno rešenje znamo da postoji presek putanje lopte i kružnice $K$ što znači da lopta udara u obruč i znamo za taj šut da je promašaj. Postoji samo jedan problem, dobijena formula je stepena 4:
 
-\[ \dfrac{g^2}{4}t^4 - v \sin \theta g t^3 + (v^2 - gH)t^2 -2v(d \cos \theta + H \sin \theta)t + H^2 - r^2 = 0\]
+\[ \dfrac{g^2}{4}t^4 - v \sin \theta g t^3 + (v^2 + gH)t^2 -2v((d_c-r_o) \cos \theta + H \sin \theta)t + H^2 + r_o^2 - r_l^2 - 2 d_c r_o = 0\]
 
 \vskip.2in
 
@@ -412,7 +412,7 @@ Dakle, uslovi koji moraju biti ispunjeni da bismo postigli pogodak su (5), (8), 
 
 \[{\theta} > \arcsin(\sqrt[]{\dfrac{2 g H}{v_{\theta}^2}}) \quad (5) \quad \quad \textbf{;} \quad \quad {\theta} > \arctan(\dfrac{H}{d_c})  \quad (8)\]
 
-\[ \quad \quad d_1 < x_{max} < d_2 \quad (11) \quad \quad \textbf{;} \quad \quad  (x - d_1)^2 + (y - H)^2 > r^2  \quad (12) \]
+\[ \quad \quad d_1 < x_{max} < d_2 \quad (11) \quad \quad \textbf{;} \quad \quad (x - d_c + r_o)^2 + (y - H)^2 > r_l^2  \quad (12) \]
 
 
 \pagebreak
@@ -451,9 +451,13 @@ Vremenska složenost ovog rešenja je na taj način $O(n \cdot m \cdot l)$ gde j
 
 \begin{enumerate}
 
-\item Program koji traži uglove $\theta_1$ i $\theta_2$
+\item Program koji traži uglove $\theta_1$ i $\theta_2$ za dato $\theta$:
 
 \lstinputlisting[language=Python]{teta1_2.py}
+
+\item Program koji traži optimalni ugao $\theta$:
+
+\lstinputlisting[language=Python]{optimalni_ugao.py}
 
 \end{enumerate}
 
