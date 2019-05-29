@@ -29,7 +29,7 @@ if __name__ == "__main__":
     r_o = 0.23      # poluprecnik obruca
     g = 9.81        # gravitaciona konstanta
     hk = 3.05       # visina kosa
-    h = 1.95        # visina kosarkasa
+    h = 1.95        # visina kosarkasa TODO
     H = hk-5.0/4*h  # popravljena visina kosa
 
     teta = optimalni_ugao(d_c, r_l, r_o, g, H)
