@@ -85,7 +85,7 @@ $g$ - gravitaciona konstanta ($g = 9.81 \dfrac{m}{s^2}$);\\
 %{\huge Ovde ce stajati slika sa pojmovima}
 %\vskip1in
 
-%\includegraphics[width=7cm, height=4cm]{pic1} %TODO
+%\includegraphics[width=7cm, height=4cm]{pic1}
 
 %\pagebreak
 
@@ -290,26 +290,18 @@ Drugu formulu dobijamo iz (6):
 
 Ovo je očigledno kvadratna jednačina po $\tan \theta$:
 
-\[ \tan \theta = \dfrac{2 d v^2 \pm \sqrt[]{4 d^2 v^4 - 4 (g d^2)(2 H + g d^2)}}{2 g d^2} \]
+\[ \tan \theta_{1,2} = \dfrac{2 d v^2 \pm \sqrt[]{4 d^2 v^4 - 4 (g d^2)(2 H + g d^2)}}{2 g d^2} \]
 
 Nakon izvlačenja $2d$ ispred korena i skraćivanja:
 
-\[ \tan \theta = \dfrac{v^2 \pm \sqrt[]{v^4 - g(2 H - g d^2)}}{g d} \]
+\[ \tan \theta_{1,2} = \dfrac{v^2 \pm \sqrt[]{v^4 - g(2 H + g d^2)}}{g d} \]
 
 \begin{equation}
-\theta = \arctan (\dfrac{v^2 \pm \sqrt[]{v^4 - g(2 H - g d^2)}}{g d})
+\theta_{1,2} = \arctan (\dfrac{v^2 \pm \sqrt[]{v^4 - g(2 H + g d^2)}}{g d})
 \end{equation}
 
 Ovom formulom možemo da odredimo pod kojim uglom je potrebno izbaciti loptu da bi pri brzini $v$ prešla put $d$ pre nego što se spusti na visinu $H$.
-Očigledno ako važi $v^4 - g(2 H - g d^2) < 0$ brzina lopte je premala da bi prešla daljinu $d$ pre nego što padne ispod $H$. U slučaju $v^4 - g(2 H - g d^2) = 0$ postoji jedan ugao $\theta$ kojim postižemo ovu daljinu, a za $v^4 - g(2 H - g d^2) > 0$ postoje dva ugla.
-
-
-%TODO Slika? + legenda
-%\includegraphics[width=10cm, height=5cm]{pic4}
-
-%\vskip1in
-%{\huge Ovde ce stajati dijagram dva ugla}
-%\vskip1in
+Očigledno ako važi $v^4 - g(2 H + g d^2) < 0$ brzina lopte je premala da bi prešla daljinu $d$ pre nego što padne ispod $H$. U slučaju $v^4 - g(2 H + g d^2) = 0$ postoji jedan ugao $\theta$ kojim postižemo ovu daljinu, a za $v^4 - g(2 H + g d^2) > 0$ postoje dva ugla.
 
 
 Sa formulama (7), (9) i (10) možemo da vidimo odnos brzine, daljine i ugla pri putanji naše lopte.
@@ -318,7 +310,8 @@ Sa formulama (7), (9) i (10) možemo da vidimo odnos brzine, daljine i ugla pri 
 
 
 
-\section{Uslovi za prolazak lopte kroz obruč} %TODO
+\section{Uslovi za prolazak lopte kroz obruč}
+%TODO Jovana slika?
 
 Do sada smo loptu posmatrali kao tačku u 2-D prostoru $L = (x,y)$. Odredili smo dva uslova koja moraju biti ispunjena da bi lopta prošla kroz obruč:
 
@@ -328,20 +321,12 @@ Pre nego što se pozabavimo traženjem uglova $\theta_1$ i $\theta_2$ moramo da 
 
 Da bi lopta prošla kroz obruč u trenutku $T$ ($y = H$) udaljenost njenog centra od prednjeg i zadnjeg dela obruča mora biti veća od poluprečnika lopte $r_l$, ali njen centar mora i dalje biti izmedju ove dve tačke. Koordinatne tačke ovih delova obruča možemo lako odrediti. Ako je centar obruča $C = (d_c,H)$, a poluprečnik obruča $r_o$, onda je bliži deo obruča $O_1 = (d_c - r_o, H)$, a dalji deo obruča $O_2 = (d_c + r_o, H)$.
 
-Pošto je na svom putu lopta krenula da pada, možemo da primetimo da kako se njena $x$-koordinata povećava, tako se $y$-koordinata smanjuje. To znači da u trenutku $T$ ona će imati maksimalnu $x$-koordinatu pre nego što prođe (ili ne prođe) kroz obruč, tj. $L = (x_{max},H)$. Da bismo pronašli $x_{max}$ koristimo formulu $(9)$. Dakle, da bi lopta u trenutku $T$ prošla kroz obruč mora da važi:
+Pošto je na svom putu lopta krenula da pada, možemo da primetimo da kako se njena $x$-koordinata povećava, tako se $y$-koordinata smanjuje. To znači da u trenutku $T$, kada centar lopte pada na visinu obruča, ona će imati maksimalnu $x$-koordinatu pre prolaska kroz obruč, tj. $L = (x_{max},H)$. $T$ je poslednje vreme koje razmatramo, jer nakon njega lopta je prošla kroz koš (ili nije) i nas više ne zanima njena $x$-koordinata, $t \in (0,T)$. Da bismo pronašli $x_{max}$ koristimo formulu $(9)$. Dakle, da bi lopta u trenutku $T$ prošla kroz obruč mora da važi:
 
 \[ d_c - r_o < x_{max} - r_l \quad \land \quad x_{max} + r_l < d_c + r_o \]
 
-%Odnosno:
-
-\[d_c - r_o + r_l \quad < \quad x_{max} \quad < \quad d_c - r_l + r_o \]
-
-%\vskip.2in
-
-Ubuduće ćemo ove dve tačke zapisivati kao $d_1 = d_c - r_o + r_l$ i $d_2 = d_c - r_l + r_o$
-
 \begin{equation}
-d_1 < x_{max} < d_2
+d_c - r_o + r_l \quad < \quad x_{max} \quad < \quad d_c - r_l + r_o
 \end{equation}
 
 %\includegraphics[width=10cm, height=5cm]{pic5}
@@ -360,11 +345,12 @@ Ovo je bio uslov prolaska lopte u trenutku $T$. Nas sad zanima da li je lopta mo
 
 Udaljenost centra lopte od $O_1$ mora biti veće od poluprečnika lopte u svakom trenutku. U suprotnom to znači da je došlo do kontakta izmedju lopte i obruča. Korišćenjem pitagorine teoreme, ovo se matematički može zapisati kao:
 
+%TODO Jovana slika?
 \begin{equation}
 (x - (d_c - r_o))^2 + (y - H)^2 > r_l^2
 \end{equation}
 
-Gde su $x$ i $y$ koordinate lopte za bilo koje $t \in (0, T)$. Ovaj uslov se geometrijski može interpretirati tako da putanja lopte ne sme da preseče kružnicu $K: (x - d_c + r_o)^2 + (y - H)^2 = r_l^2$. Menjanjem $x$ i $y$ sa $(3)$ i $(4)$ možemo da formulu kružnice pretvorimo u funkciju po $t$. Odavde ako nadjemo za $t$ bar jedno realno rešenje znamo da postoji presek putanje lopte i kružnice $K$ što znači da lopta udara u obruč i znamo za taj šut da je promašaj. Postoji samo jedan problem, dobijena formula je stepena 4:
+Gde su $x$ i $y$ koordinate lopte za bilo koje $t \in (0, T)$. Ovaj uslov se geometrijski može interpretirati tako da putanja lopte ne sme da preseče kružnicu $K: (x - d_c + r_o)^2 + (y - H)^2 = r_l^2$. Menjanjem $x$ i $y$ sa $(1)$ i $(2)$ možemo da formulu kružnice pretvorimo u funkciju po $t$. Odavde ako nadjemo za $t$ bar jedno realno rešenje znamo da postoji presek putanje lopte i kružnice $K$ što znači da lopta udara u obruč i znamo za taj šut da je promašaj. Postoji samo jedan problem, dobijena formula je stepena 4:
 
 \[ \dfrac{g^2}{4}t^4 - v \sin \theta g t^3 + (v^2 + gH)t^2 -2v((d_c-r_o) \cos \theta + H \sin \theta)t + H^2 + r_o^2 - r_l^2 - 2 d_c r_o = 0\]
 
