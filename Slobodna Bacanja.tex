@@ -81,14 +81,6 @@ $r_l$ - poluprečnik lopte;\\
 $r_o$ - poluprečnik obruča ($r_o>r_l$);\\
 $g$ - gravitaciona konstanta ($g = 9.81 \dfrac{m}{s^2}$);\\
 
-%\vskip1in
-%{\huge Ovde ce stajati slika sa pojmovima}
-%\vskip1in
-
-%\includegraphics[width=7cm, height=4cm]{pic1}
-
-%\pagebreak
-
 
 
 \section{Modeliranje leta lopte}
@@ -96,17 +88,13 @@ $g$ - gravitaciona konstanta ($g = 9.81 \dfrac{m}{s^2}$);\\
 Podrazumevaćemo:
 \begin{itemize}
 
-%\item poluprečnik lopte $r_l$ je manji od poluprečnika obruča $r_o$:
-%\[r_l<r_o\] %(3.1.1)
-
 \item lopta ide dirketno ka košu, ne skreće sa putanje levo ili desno. Odnosno, nema lateralne greške pri šutu.
 
 \item ugao $\theta$ je između $0^0$ i $90^0$:\\
 \[0 < \theta < \pi/2\]
 
 \item visina koša $h_k$ je veća od visine izbačaja košarkaša $\dfrac{_5}{^4}h$:\\
-\[h_k > \dfrac{_5}{^4}h\]  %\hfill \centerline{}
-%(ovo nije obavezno ali olakšava crtanje slike)\\
+\[h_k > \dfrac{_5}{^4}h\]
 
 \end{itemize}
 
@@ -118,13 +106,11 @@ Zbog jednostavnosti zapisa uzećemo da je $H = h_k-\dfrac{_5}{^4}h$, odnosno $C 
 
 \begin{figure}[h]
 \hspace*{0.9cm}
-\includegraphics[width=10cm, height=5cm]{pic2}
+\includegraphics[width=10cm, height=5cm]{pic1}
 \caption{Putanja lopte}
 \end{figure}
 
 Po ovoj slici možemo primetiti da je polazni problem u stvari jedna vrsta problema kosog hica.
-
-%\pagebreak
 
 
 
@@ -155,8 +141,6 @@ y(t) = v_\theta \cdot \sin \theta\cdot t - \dfrac{g}{2} \cdot t^2
 Dakle, koordinate centra lopte $L$ u nekom trenutku $t$ su:
 
 \[L(t) = (x(t), y(t)) = (v_\theta \cdot \cos \theta \cdot t, v_\theta \cdot \sin \theta \cdot t - \dfrac{g}{2} \cdot t^2)\]
-
-%Gde je $L(t)$ parametrizovana kriva.
 
 \subsection{Odnos brzine, daljine i ugla ($v, d, \theta$)}
 
@@ -190,9 +174,6 @@ Dakle, vidimo odnos vremena i brzine. Gledamo sad drugu jednačinu:
 Dobili smo dakle kvadratnu jednačinu po $T$, čija su rešenja:
 
 \[T_{1,2} = \dfrac{v_{\theta} \sin \theta \pm \sqrt[]{v_{\theta}^2 \sin^2 \theta - 2 g H}}{g}\]
-
-%Posmatramo putanju lopte kao kvadratnu funkciju po $T$.
-%TODO dijagram preseka kv. funkcije i prave y = H?
 
 Možemo da vidimo da za vrednosti ${v_{\theta}^2 \sin^2 \theta < 2 g H}$ ne postoji rešenje u skupu realnih brojeva. To znači da lopta nikada neće dostići visinu H i samim tim nećemo postići koš.
 U slučaju da važi ${v_{\theta}^2 \sin^2 \theta = 2 g H}$, postoji jedno rešenje $T_1 = T_2 = T$. Ovo nam isto ne odgovara jer ne prebacujemo visinu obruča. Samo ćemo uspeti da dobacimo do centra koša odozdo. Nećemo postići pogodak.
@@ -253,11 +234,11 @@ Tokom sređivanja izraza došli smo do novog uslova $d_c \tan \theta - H > 0$, o
 
 Što je geometrijski logično jer da ne važi ovaj uslov mi bi ciljali ispod koša i uvek bi prebacili daljinu obruča pre nego što bi stigli na njegovu visinu.
 
-%TODO caption! crvena v =inf plava v =25
 \begin{figure}[h]
 \hspace*{1cm}
-\includegraphics[width=10cm, height=5cm]{pic3}
-\caption{$\theta < \arctan(\dfrac{H}{d_c})$; Plava: $v=25\dfrac{m}{s^2}$; Crvena: $v=inf\dfrac{m}{s^2}$}
+\includegraphics[width=10cm, height=5cm]{pic2}
+\caption{Plava: $v=25\dfrac{m}{s^2}$; Crvena: $v=+
+\infty\dfrac{m}{s^2}$}
 \end{figure}
 
 \vskip.2in
@@ -311,7 +292,6 @@ Sa formulama (7), (9) i (10) možemo da vidimo odnos brzine, daljine i ugla pri 
 
 
 \section{Uslovi za prolazak lopte kroz obruč}
-%TODO Jovana slika?
 
 Do sada smo loptu posmatrali kao tačku u 2-D prostoru $L = (x,y)$. Odredili smo dva uslova koja moraju biti ispunjena da bi lopta prošla kroz obruč:
 
@@ -329,15 +309,15 @@ Pošto je na svom putu lopta krenula da pada, možemo da primetimo da kako se nj
 d_c - r_o + r_l \quad < \quad x_{max} \quad < \quad d_c - r_l + r_o
 \end{equation}
 
-%\includegraphics[width=10cm, height=5cm]{pic5}
-
-%\pagebreak
-
+%TODO
+%\begin{figure}[h]
+%\hspace*{-0.1cm}
+%\includegraphics[scale=0.1]{pic3}
+%\caption{Položaj lopte u trenutku $T$}
+%\end{figure}
 
 
 Ovo je bio uslov prolaska lopte u trenutku $T$. Nas sad zanima da li je lopta mogla udariti u obruč pre tog trenutka. Za dalji deo obruča očigledno je odgovor ne, jer ako centar lopte nije prebacio tačku $d_2$ u trenutku $T$ sigurno nije ni u nekom ranijem trenutku kada je lopta bila dalja od $O_2$. Dalje se logično postavlja pitanje za $O_1$.
-
-\pagebreak
 
 
 
@@ -345,10 +325,18 @@ Ovo je bio uslov prolaska lopte u trenutku $T$. Nas sad zanima da li je lopta mo
 
 Udaljenost centra lopte od $O_1$ mora biti veće od poluprečnika lopte u svakom trenutku. U suprotnom to znači da je došlo do kontakta izmedju lopte i obruča. Korišćenjem pitagorine teoreme, ovo se matematički može zapisati kao:
 
-%TODO Jovana slika?
 \begin{equation}
 (x - (d_c - r_o))^2 + (y - H)^2 > r_l^2
 \end{equation}
+
+
+\begin{figure}[h]
+\hspace*{3cm}
+\includegraphics[scale=0.4]{pic4}
+\caption{%Razdaljina izmedju lopte i obruča:
+$S_1 = x - (d_c - r_o)$, $S_2 = y-H$}
+\end{figure}
+
 
 Gde su $x$ i $y$ koordinate lopte za bilo koje $t \in (0, T)$. Ovaj uslov se geometrijski može interpretirati tako da putanja lopte ne sme da preseče kružnicu $K: (x - d_c + r_o)^2 + (y - H)^2 = r_l^2$. Menjanjem $x$ i $y$ sa $(1)$ i $(2)$ možemo da formulu kružnice pretvorimo u funkciju po $t$. Odavde ako nadjemo za $t$ bar jedno realno rešenje znamo da postoji presek putanje lopte i kružnice $K$ što znači da lopta udara u obruč i znamo za taj šut da je promašaj. Postoji samo jedan problem, dobijena formula je stepena 4:
 
@@ -366,7 +354,7 @@ Gde $v_0$ označava početnu brzinu šuta, koju smo ranije obeležavali sa $v$. 
 
 \[ \vec{n}(t) = \dfrac{(- (v_0 \sin \theta - gt) ,v_0 \cos \theta)}{\| (- (v_0 \sin \theta - gt) ,v_0 \cos \theta) \|} \] 
 
-\pagebreak
+%\pagebreak
 
 Pošto je pravac putanje centra lopte sa leva na desno, vektor $\vec{n}$ je uperen ka nebu. Da bismo dobili putanju $DG$ treba da svakoj tački putanje lopte $L(t)$ dodamo vektor $-r_l \vec{n}$:
 
@@ -407,26 +395,22 @@ Dakle, uslovi koji moraju biti ispunjeni da bismo postigli pogodak su (5), (8), 
 
 
 
-\section{Uglovi $\theta_1$ i $\theta_2$} %TODO
-
-%TODO ----------------------------
-
+\section{Uglovi $\theta_1$ i $\theta_2$}
 Pretpostavimo da $\theta \in (0,\pi/2)$ ispunjava uslove za pogodak. Postavlja se pitanje kako da odredimo $\theta_1$ i $\theta_2$ za dati ugao $\theta$?
 
-Očigledan način je da iskoristimo formulu (10):
+Očigledan način je da iskoristimo formulu (10). Na taj način dobijamo dva kandidata:
 
-\[ \theta_1 = \arctan (\dfrac{v_\theta^2 \pm \sqrt[]{v_\theta^4 - g(2 H + g d_1^2)}}{g d_1}) \]
+\[ \overline\theta_1 = \arctan (\dfrac{v_\theta^2 \pm \sqrt[]{v_\theta^4 - g(2 H + g (d_c - r_o + r_l)^2)}}{g (d_c - r_o + r_l)}) \]
 
-\[ \theta_2 = \arctan (\dfrac{v_\theta^2 \pm \sqrt[]{v_\theta^4 - g(2 H + g d_2^2)}}{g d_2}) \]
+\[ \overline\theta_2 = \arctan (\dfrac{v_\theta^2 \pm \sqrt[]{v_\theta^4 - g(2 H + g (d_c + r_o - r_l)^2)}}{g (d_c + r_o - r_l)}) \]
 
-U slučaju da dobijemo dva ugla za $\theta_1$ ili $\theta_2$ uzimamo ono koje je bliže $\theta$.
-Problem sa ovom metodom je što ne vršimo proveru da li važe uslovi (5), (8), (11) i (12). Čak i da dobijeni ugao $\theta_1$ ispunjava sve ove uslove, ne bismo bili sigurni da ne postoji ugao $\theta_x$, $\theta_1 < \theta_x < \theta$ koji ne ispunjava ove uslove. Na ovaj način tvrdili bi da lopta upada u koš za uglove $\alpha \in (\theta_1, \theta_2)$, ali to ne bi bilo tačno za $\alpha = \theta_x$.
+U slučaju da dobijemo dva ugla za $\overline\theta_1$ ili $\overline\theta_2$ uzimamo onaj koji je bliži $\theta$.
+Problem sa ovom metodom je što uzimamo u obzir samo uslov prolaza (11), ne vršimo proveru da li važe ostali uslovi (5), (8) i (12). Umesto da ih posmatramo kao rešenja, $\overline\theta_1$ i $\overline\theta_2$ će nam predstavljati granicu. Znamo za $\theta_1$ i $\theta_2$ da se nalaze u rasponu $\theta_1 \in (\overline\theta_1, \theta)$ i $\theta_2 \in (\theta, \overline\theta_2)$. Dalje možemo grubom silom da idemo od $\overline\theta_1$ i $\overline\theta_2$ ka $\theta$, i prvi ugao koji ispunjava sve uslove proglašavamo za $\theta_1$, odnosno $\theta_2$.
 
-%TODO ----------------------------
+%\vskip.1in
+%umesto od $\overline\theta_1$, $\overline\theta_2$
 
-\vskip.2in
-
-Druga opcija je iterativni metod. Za \textit{ad hoc} određen korak iteracije $k$ udaljavamo se od $\theta$ u oba smera. Čim naiđemo na ugao koji ne zadovoljava uslove, uzimamo prvi prethodni koji je zadovoljavao. Tako u oba smera, i te uglove proglašavamo za $\theta_1$ i $\theta_2$.
+Jednostavnije je da počnemo od $\theta$. Za \textit{ad hoc} određen korak iteracije $k$ udaljavamo se od $\theta$ u oba smera. Čim naiđemo na ugao koji ne zadovoljava uslove, uzimamo prvi prethodni koji je zadovoljavao. Tako u oba smera, i te uglove proglašavamo za $\theta_1$ i $\theta_2$.
 
 
 
@@ -454,5 +438,27 @@ Vremenska složenost ovog rešenja je na taj način $O(n \cdot m \cdot l)$ gde j
 \end{enumerate}
 
 \section{Tabela: Dallas Mavericks}
+
+\begin{table}
+\begin{center}
+ \begin{tabular}{||p{5cm}|p{3cm}|p{3cm}|p{3cm}||} 
+ \hline
+ Ime i prezime & Col2 & Col2 & Col3 \\ [0.5ex] 
+ \hline\hline
+ 1 & 6 & 87837 & 787 \\ 
+ \hline
+ 2 & 7 & 78 & 5415 \\
+ \hline
+ 3 & 545 & 778 & 7507 \\
+ \hline
+ 4 & 545 & 18744 & 7560 \\
+ \hline
+ 5 & 88 & 788 & 6344 \\ [1ex] 
+ \hline
+\end{tabular}
+\label{tabela 1}
+\caption{Optimalno $\theta$ za roster Dallas Mavericks-a}
+\end{center}
+\end{table}
 
 \end{document}
