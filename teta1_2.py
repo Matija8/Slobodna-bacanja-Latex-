@@ -22,7 +22,7 @@ def nadji_teta1_teta2(teta, d_c, r_l, r_o, g, H):
         if not d_c - r_o + r_l < nadji_distancu(v, ugao-ugao_korak, H, g) < d_c + r_o - r_l:
             teta1 = ugao
             break
-        for t in np.arange(t1, t2, t_korak):  # TODO
+        for t in np.arange(t1, t2, t_korak):
             if not (((x_koord(t, v, ugao-ugao_korak) - (d_c - r_o))**2
                     + (y_koord(t, v, ugao-ugao_korak, g) - H)**2) > (r_l**2)):
                 teta1 = ugao
@@ -37,7 +37,7 @@ def nadji_teta1_teta2(teta, d_c, r_l, r_o, g, H):
         if not d_c - r_o + r_l < nadji_distancu(v, ugao+ugao_korak, H, g) < d_c + r_o - r_l:
             teta2 = ugao
             break
-        for t in np.arange(t1, t2, t_korak):  # TODO
+        for t in np.arange(t1, t2, t_korak):
             if not (((x_koord(t, v, ugao+ugao_korak) - (d_c - r_o)) ** 2
                     + (y_koord(t, v, ugao+ugao_korak, g) - H) ** 2) > (r_l ** 2)):
                 teta2 = ugao
@@ -92,3 +92,4 @@ if __name__ == "__main__":
         exit()
     (teta_1, teta_2) = nadji_teta1_teta2(prebaci_u_radijan(teta), d_c, r_l, r_o, g, H)
     print(f"teta1 = {prebaci_u_stepen(teta_1):.2f}, teta2 = {prebaci_u_stepen(teta_2):.2f}")
+    # kraj programa

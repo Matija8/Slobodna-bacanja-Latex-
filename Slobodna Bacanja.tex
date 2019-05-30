@@ -19,6 +19,55 @@
 \usepackage{graphicx}
 \graphicspath{ {./slike/} }
 \usepackage{float}
+%\usepackage{siunitx}
+\usepackage{gensymb}
+
+%-------------------------------------------------------
+
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
+
+% Custom colors
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{grey}{rgb}{0.5,0.1,0.1}
+
+\usepackage{listings}
+
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+language=Python,
+basicstyle=\ttm,
+otherkeywords={self},             % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+commentstyle=\ttm\color{grey},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=t,                         % Any extra options here
+showstringspaces=false            % 
+}}
+
+
+% Python environment
+\lstnewenvironment{python}[1][]
+{
+\pythonstyle
+\lstset{#1}
+}
+{}
+
+% Python for external files
+\newcommand\pythonexternal[2][]{{
+\pythonstyle
+\lstinputlisting[#1]{#2}}}
+
+% Python for inline
+\newcommand\pythoninline[1]{{\pythonstyle\lstinline!#1!}}
+%----------------------------------------------------------
 
 \begin{document}
 
@@ -428,17 +477,18 @@ Vremenska složenost ovog rešenja je na taj način $O(n \cdot m \cdot l)$ gde j
 
 \section{Programski kod (Python)}
 
-\begin{enumerate}
+%\begin{enumerate}
 
-\item \large Program koji traži uglove $\theta_1$ i $\theta_2$ za dato $\theta$:
+\large \textbf{1) Program koji traži uglove $\theta_1$ i $\theta_2$ za dato $\theta$:}
+\pythonexternal[language=Python]{teta1_2.py}
 
-\lstinputlisting[language=Python]{teta1_2.py}
+%\pagebreak
+\vskip.5in
 
-\item \large Program koji traži optimalni ugao $\theta$ (poziva 1.):
+\large \textbf{2) Program koji traži optimalni ugao $\theta$ (poziva 1):}
+\pythonexternal[language=Python]{optimalni_ugao.py}
 
-\lstinputlisting[language=Python]{optimalni_ugao.py}
-
-\end{enumerate}
+%\end{enumerate}
 
 %\pagebreak
 
@@ -450,18 +500,56 @@ Vremenska složenost ovog rešenja je na taj način $O(n \cdot m \cdot l)$ gde j
 \begin{center}
  \begin{tabular}{|p{0.7cm}|p{5cm}|p{2cm}|p{2cm}||} 
  \hline
- Broj & Prezime, Ime & Visina(m) & Ugao\\ %[0.5ex] 
+ \# & Prezime, Ime & Visina & Ugao\\ [0.7ex]
  \hline
- 37 & Antetokounmpo, Kostas & 2.08 m & 53.86 \\  %53.8604
+ 37 & Antetokounmpo, Kostas & \quad 2.08 m & \quad 53.86\degree \\  %53.8604
+ \hline 
+ 
+ 5 & Barea, J. J. & \quad 1.83 m & \quad 55.48\degree \\ %55.4775
  \hline
- 5 & Barea, J. J. & 1.83 m & 5415 \\
+ 
+ 45 & Broekhoff, Ryan & \quad 2.01 m & \quad 54.28\degree \\ %54.2785
  \hline
- 3 & 545 & 778 & 7507 \\
+ 
+ 13 & Brunson, Jalen & \quad 1.91 m & \quad 54.98\degree \\ %54.9850
  \hline
- 4 & 545 & 18744 & 7560 \\
+ 
+ 23 & Burke, Trey & \quad 1.85 m & \quad 55.37\degree \\ %55.3697
  \hline
- 5 & 88 & 788 & 6344 \\ [1ex] 
+ 
+ 77 & Dončić, Luka & \quad 2.01 m & \quad 54.28\degree \\ %54.2785
  \hline
+ 
+ 10 & Finney-Smith, Dorian & \quad 2.03 m & \quad 54.19\degree \\ %54.1940
+ \hline
+ 
+ 11 & Hardaway, Tim & \quad 1.98 m & \quad 54.52\degree \\ %54.5246
+ \hline
+ 
+ 34 & Harris, Devin & \quad 1.91 m & \quad 54.98\degree \\ %54.9850
+ \hline
+ 
+ 4 & Jackson, Justin & \quad 2.03 m & \quad 54.19\degree \\ %54.1940
+ \hline
+ 
+ 42 & Kleber, Maxi & \quad 2.11 m & \quad 53.65\degree \\ %53.6452
+ \hline
+ 
+ 1 & Lee, Courtney & \quad 1.96 m & \quad 54.65\degree \\ %54.6478
+ \hline
+ 
+ 3 & Macon, Daryl & \quad 1.91 m & \quad 54.98\degree \\ %54.9850
+ \hline
+ 
+ 50 & Mejri, Salah & \quad 2.18 m & \quad 53.22\degree \\ %53.2200
+ \hline
+ 
+ 6 & Porziņģis, Kristaps  & \quad 2.21 m & \quad 53\degree \\ %53.0021
+ \hline
+ 
+ 5 & Powell, Dwight & \quad 2.11 m & \quad 53.65\degree \\ [1ex] %53.6452 
+ \hline
+
 \end{tabular}
 \label{tabela 1}
 \caption{Optimalno $\theta$ za roster Dallas Mavericks-a}

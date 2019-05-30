@@ -15,13 +15,13 @@ def optimalni_ugao(d_c, r_l, r_o, g, H):
     for ugao in np.arange(min_teta, max_teta, 0.0001):
         teta1, teta2 = nadji_teta1_teta2(ugao, d_c, r_l, r_o, g, H)
         # ako sklonimo komentar ispod mozemo da vidimo teta2-teta1 za svaki ugao
-        print(f"teta = {prebaci_u_stepen(ugao):.2f}, raz = {prebaci_u_stepen(teta2 - teta1):.6f}")
+        #print(f"teta = {prebaci_u_stepen(ugao):.2f}, raz = {prebaci_u_stepen(teta2 - teta1):.6f}")
         if teta2 - teta1 > opt_razlika:
             opt_teta = ugao
             opt_razlika = teta2 - teta1
 
     end = time.time()
-    print(f"Vreme trajanja programa: {(end - start):.4} s")  # ispisuje vreme trajanja programa u sekundama
+    #print(f"Vreme trajanja programa: {(end - start):.4} s")  # ispisuje vreme trajanja programa u sekundama
     return opt_teta
 
 
@@ -34,9 +34,10 @@ if __name__ == "__main__":
 
     h = float(input("Unesite visinu kosarksa (u metrima): "))
     if not 0 < h < 3:
-        print("Visina kosarkasa nije u korektnom rasponu (do 3 metra)")
+        print("\nVisina kosarkasa nije u korektnom rasponu (do 3 metra)")
         exit()
     H = hk-5.0/4*h        # popravljena visina kosa
 
     teta = optimalni_ugao(d_c, r_l, r_o, g, H)
     print(f"\nOptimalni ugao teta = {prebaci_u_stepen(teta):.4f}")
+    # kraj programa
