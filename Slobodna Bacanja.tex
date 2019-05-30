@@ -18,6 +18,7 @@
 \hypersetup{colorlinks,citecolor=green,filecolor=green,linkcolor=blue,urlcolor=blue}
 \usepackage{graphicx}
 \graphicspath{ {./slike/} }
+\usepackage{float}
 
 \begin{document}
 
@@ -302,7 +303,7 @@ Pre nego što se pozabavimo traženjem uglova $\theta_1$ i $\theta_2$ moramo da 
 Da bi lopta prošla kroz obruč u trenutku $T$ ($y = H$) udaljenost njenog centra od prednjeg i zadnjeg dela obruča mora biti veća od poluprečnika lopte $r_l$, ali njen centar mora i dalje biti izmedju ove dve tačke. Koordinatne tačke ovih delova obruča možemo lako odrediti. Ako je centar obruča $C = (d_c,H)$, a poluprečnik obruča $r_o$, onda je bliži deo obruča $O_1 = (d_c - r_o, H)$, a dalji deo obruča $O_2 = (d_c + r_o, H)$.
 
 Pošto je na svom putu lopta krenula da pada, možemo da primetimo da kako se njena $x$-koordinata povećava, tako se $y$-koordinata smanjuje. To znači da u trenutku $T$, kada centar lopte pada na visinu obruča, ona će imati maksimalnu $x$-koordinatu pre prolaska kroz obruč, tj. $L = (x_{max},H)$. $T$ je poslednje vreme koje razmatramo, jer nakon njega lopta je prošla kroz koš (ili nije) i nas više ne zanima njena $x$-koordinata, odnosno $t \in (0,T)$.
-%TODO
+
 \begin{figure}[h]
 \hspace*{1.6cm}
 \includegraphics[scale=0.3]{pic3}
@@ -334,8 +335,7 @@ Udaljenost centra lopte od $O_1$ mora biti veće od poluprečnika lopte u svakom
 \begin{figure}[h]
 \hspace*{3cm}
 \includegraphics[scale=0.4]{pic4}
-\caption{%Razdaljina izmedju lopte i obruča:
-$S_1 = x - (d_c - r_o)$, $S_2 = y-H$}
+\caption{$S$: Udaljenost Lopte od $O_1$,\quad $S_1 = x - (d_c - r_o)$,\quad $S_2 = y-H$}
 \end{figure}
 
 
@@ -424,6 +424,8 @@ Vremenska složenost ovog rešenja je na taj način $O(n \cdot m \cdot l)$ gde j
 
 \pagebreak
 
+
+
 \section{Programski kod (Python)}
 
 \begin{enumerate}
@@ -438,13 +440,17 @@ Vremenska složenost ovog rešenja je na taj način $O(n \cdot m \cdot l)$ gde j
 
 \end{enumerate}
 
+\pagebreak
+
+
+
 \section{Tabela: Dallas Mavericks}
 
-\begin{table}
+\begin{table}[h]
 \begin{center}
- \begin{tabular}{||p{5cm}|p{3cm}|p{3cm}|p{3cm}||} 
+ \begin{tabular}{||p{4cm}|p{3cm}|p{3cm}|p{3cm}||} 
  \hline
- Ime i prezime & Col2 & Col2 & Col3 \\ [0.5ex] 
+ Ime i prezime & Visina(m) & Ugao & TODO? \\ [0.5ex] 
  \hline\hline
  1 & 6 & 87837 & 787 \\ 
  \hline
