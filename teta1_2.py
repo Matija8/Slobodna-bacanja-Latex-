@@ -5,29 +5,30 @@ import matplotlib.pyplot as plt
 
 def nadji_teta1_teta2(teta, d_c, r_l, r_o, g, H):
     # uslov (8)
-    if not atan(H/d_c) + prebaci_u_radijan(1) < teta < prebaci_u_radijan(70):
+    if not atan(H/d_c) + prebaci_u_radijan(1) < teta < prebaci_u_radijan(90):
         return teta, teta
 
     v = nadji_brzinu(d_c, teta, H, g)
+    # uslov (5)
     min_teta = max(asin(sqrt(2*g*H/v**2)), atan(H/d_c)) + prebaci_u_radijan(1)
-    max_teta = prebaci_u_radijan(70)
+    max_teta = prebaci_u_radijan(90)
 
     ugao_korak = prebaci_u_radijan(1)  # prvo nam je 1 stepen korak
-    teta1 = uslovi_12_i_11(teta, min_teta, -ugao_korak, d_c, r_l, r_o, g, H, v)
+    teta1 = uslovi_11_i_12(teta, min_teta, -ugao_korak, d_c, r_l, r_o, g, H, v)
 
     ugao_korak = prebaci_u_radijan(0.01)  # zatim 0.01 stepen, ali sad idemo od teta1
-    teta1 = uslovi_12_i_11(teta1, min_teta, -ugao_korak, d_c, r_l, r_o, g, H, v)
+    teta1 = uslovi_11_i_12(teta1, min_teta, -ugao_korak, d_c, r_l, r_o, g, H, v)
 
     ugao_korak = prebaci_u_radijan(1)  # prvo nam je 1 stepen korak
-    teta2 = uslovi_12_i_11(teta, max_teta, ugao_korak, d_c, r_l, r_o, g, H, v)
+    teta2 = uslovi_11_i_12(teta, max_teta, ugao_korak, d_c, r_l, r_o, g, H, v)
 
-    ugao_korak = prebaci_u_radijan(0.01)  # zatim trazimo preciznije od teta2 do max_teta
-    teta2 = uslovi_12_i_11(teta2, max_teta, ugao_korak, d_c, r_l, r_o, g, H, v)
+    ugao_korak = prebaci_u_radijan(0.01)  # zatim trazimo preciznije od teta2 do max_teta, k = 0.01
+    teta2 = uslovi_11_i_12(teta2, max_teta, ugao_korak, d_c, r_l, r_o, g, H, v)
 
     return teta1, teta2
 
 
-def uslovi_12_i_11(od, do, korak, d_c, r_l, r_o, g, H, v):
+def uslovi_11_i_12(od, do, korak, d_c, r_l, r_o, g, H, v):
     teta1_2 = od
 
     stani = False

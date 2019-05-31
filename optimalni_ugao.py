@@ -16,7 +16,7 @@ def optimalni_ugao(d_c, r_l, r_o, g, H):
     for ugao in np.arange(min_teta, max_teta, korak_teta):
         teta1, teta2 = nadji_teta1_teta2(ugao, d_c, r_l, r_o, g, H)
         # ako sklonimo komentar ispod mozemo da vidimo teta2-teta1 za svaki ugao
-        print(f"teta = {prebaci_u_stepen(ugao):.2f}, raz = {prebaci_u_stepen(teta2 - teta1):.3f}")
+        #print(f"teta = {prebaci_u_stepen(ugao):.2f}, raz = {prebaci_u_stepen(teta2 - teta1):.3f}")
         if teta2 - teta1 > opt_razlika:
             opt_teta = ugao
             opt_razlika = teta2 - teta1
@@ -40,5 +40,5 @@ if __name__ == "__main__":
     H = hk-5.0/4*h        # popravljena visina kosa
 
     teta = optimalni_ugao(d_c, r_l, r_o, g, H)
-    print(f"\nOptimalni ugao teta = {prebaci_u_stepen(teta):.4f}")
+    print(f"\nOptimalni ugao teta = {prebaci_u_stepen(teta):.2f}")
     # kraj programa
