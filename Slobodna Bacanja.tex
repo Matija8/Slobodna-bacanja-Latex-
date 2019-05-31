@@ -121,16 +121,24 @@ Košarkaš prilikom slobodnog bacanja izbacuje loptu sa visine koja odgovara 5/4
 
 \subsection{Pojmovi}
 
-Osnovni pojmovi:\\
-$h$ - visina košarkaša koji izvodi slobodna bacanja;\\
-$h_k$ - visina koša;\\
-$\theta$ - ugao izbačaja;\\
-$v_\theta$ - brzina izbačaja za ugao $\theta$ pri kojoj lopta prolazi kroz centar obruča;\\
-$d_c$ - rastojanje od košarkaša (y-ose) do centra obruča;\\
-$r_l$ - poluprečnik lopte;\\
-$r_o$ - poluprečnik obruča ($r_o>r_l$);\\
-$g$ - gravitaciona konstanta ($g = 9.81 \dfrac{m}{s^2}$);\\
+Osnovni pojmovi:
 
+%\vskip0.2cm
+%TODO
+
+\begin{list}{}{}
+
+\item $h$ - visina košarkaša koji izvodi slobodna bacanja;
+\item $h_k$ - visina koša, $h_k = 3.05$ $m$;
+\item $\theta$ - ugao izbačaja;
+\item $v_\theta$ - brzina izbačaja za ugao $\theta$ pri kojoj lopta prolazi kroz centar obruča;
+\item $d_c$ - rastojanje od košarkaša (y-ose) do centra obruča, $d_c = 4.19$ $m$;
+%\\($4.57$ $m$ - od linije do table, $0.15$ $m$ - od table do obruča, $0.23$ $m$ - $r_l$)
+\item $r_l$ - poluprečnik lopte, $r_l = \dfrac{0.75 m}{2\pi} \approx 0.1193$ $m$;
+\item $r_o$ - poluprečnik obruča, $r_o = 0.23$ $m$;
+\item $g$ - gravitaciona konstanta, $g = 9.81 \dfrac{m}{s^2}$;
+
+\end{list}
 
 
 \section{Modeliranje leta lopte}
@@ -435,7 +443,13 @@ Mi tražimo $t$ tako da važi $DG(t) = (d_{dg}, H)$, gde je $d_{dg}$ x-koordinat
  
 \vskip.2in
 
-Treća opcija je iterativno proveravati da li smo zakačili $O_1$, odnosno da li nije ispunjen uslov $(12)$. Znamo da za $L(t) = (x,y)$ možemo dotaći obruč samo ako važi $(d_c - r_o) - r_l < x < (d_c - r_o) + r_l $, odnosno razlika x-koordinata centra lopte $L$ i prednje ivice obruča $O_1$ je manja od poluprečnika lopte $r_l$. Nije teško odrediti $t$ za koje je $x$ u ovom rasponu. Samo koristimo formulu (3): $t_1 = \dfrac{d_c - r_o - r_l}{v_\theta \cos \theta}$, $t_2 = \dfrac{d_c - r_o + r_l}{v_\theta \cos \theta}$. Dalje za mali korak $k \in  \mathbb{R}$, koji ćemo \textit{ad hoc} odrediti, proveravamo za svako $t = t_1+nk, t \in (t_1,t_2), n \in  \mathbb{N}$, da li važi uslov $(12)$. U slučaju da postoji $t$ za koje ne važi $(12)$ proglašavamo promašaj, inače pogodak.
+Treća opcija je iterativno proveravati da li smo zakačili $O_1$, odnosno da li nije ispunjen uslov $(12)$. Znamo da za $L(t) = (x,y)$ možemo dotaći obruč samo ako važi $(d_c - r_o) - r_l < x < (d_c - r_o) + r_l $, odnosno razlika x-koordinata centra lopte $L$ i prednje ivice obruča $O_1$ je manja od poluprečnika lopte $r_l$. Nije teško odrediti $t$ za koje je $x$ u ovom rasponu. Samo koristimo formulu (3):
+\[ t_1 = \dfrac{d_c - r_o - r_l}{v_\theta \cos \theta}\quad , \quad  t_2 = \dfrac{d_c - r_o + r_l}{v_\theta \cos \theta} \]
+
+%TODO k za t u programu samo srediti.
+
+Dalje, za mali korak $k$, $k \in  \mathbb{R}$, proveravamo za svako $t = t_1+nk$, $t \in [t_1, t_2],$ $n \in  \mathbb{N} \cup \{0\}$, da li važi uslov $(12)$. Ovde je $n+1$ broj provera koje želimo da izvršimo. Sledi da ako želimo da izvršimo $n$ provera važiće $t_2 = t_1 + (n-1)k$, odnosno $k = \dfrac{t_2 - t_1}{n-1}$. U radu smo se odlučili za 11 provera, tako da nam je $k = \dfrac{t_2 - t_1}{10}$
+U slučaju da postoji $t$ za koje ne važi $(12)$ proglašavamo da je šut promašaj, inače pogodak.
 Dakle, uslovi koji moraju biti ispunjeni da bismo postigli pogodak su (5), (8), (11) i (12).
 
 %\[{\theta} > \arcsin(\sqrt[]{\dfrac{2 g H}{v_{\theta}^2}}) \quad (5) \quad \quad \textbf{;} \quad \quad {\theta} > \arctan(\dfrac{H}{d_c})  \quad (8)\]
@@ -446,6 +460,7 @@ Dakle, uslovi koji moraju biti ispunjeni da bismo postigli pogodak su (5), (8), 
 
 
 \section{Uglovi $\theta_1$ i $\theta_2$}
+
 Pretpostavimo da $\theta \in (0,\pi/2)$ ispunjava uslove za pogodak. Postavlja se pitanje kako da odredimo $\theta_1$ i $\theta_2$ za dati ugao $\theta$?
 
 Očigledan način je da iskoristimo formulu (10). Na taj način dobijamo dva kandidata:
@@ -455,19 +470,24 @@ Očigledan način je da iskoristimo formulu (10). Na taj način dobijamo dva kan
 \[ \overline\theta_2 = \arctan (\dfrac{v_\theta^2 \pm \sqrt[]{v_\theta^4 - g(2 H + g (d_c + r_o - r_l)^2)}}{g (d_c + r_o - r_l)}) \]
 
 U slučaju da dobijemo dva ugla za $\overline\theta_1$ ili $\overline\theta_2$ uzimamo onaj koji je bliži $\theta$.
-Problem sa ovom metodom je što uzimamo u obzir samo uslov prolaza (11), ne vršimo proveru da li važe ostali uslovi (5), (8) i (12). Umesto da ih posmatramo kao rešenja, $\overline\theta_1$ i $\overline\theta_2$ će nam predstavljati granicu. Znamo za $\theta_1$ i $\theta_2$ da se nalaze u rasponu $\theta_1 \in (\overline\theta_1, \theta)$ i $\theta_2 \in (\theta, \overline\theta_2)$. Dalje možemo grubom silom da idemo od $\overline\theta_1$ i $\overline\theta_2$ ka $\theta$, i prvi ugao koji ispunjava sve uslove proglašavamo za $\theta_1$, odnosno $\theta_2$.
+Problem sa ovom metodom je što uzimamo u obzir samo uslov prolaza (11), ne vršimo proveru da li važe ostali uslovi (5), (8) i (12). Umesto da ih posmatramo kao rešenja, $\overline\theta_1$ i $\overline\theta_2$ će nam predstavljati granicu. Znamo za $\theta_1$ i $\theta_2$ da se nalaze u rasponu $\theta_1 \in (\overline\theta_1, \theta)$ i $\theta_2 \in (\theta, \overline\theta_2)$. Dalje možemo grubom silom da idemo od $\overline\theta_1$ i $\overline\theta_2$ ka $\theta$, pomerajući se za ugao $k$, i prvi ugao koji ispunjava sve uslove proglašavamo za $\theta_1$, odnosno $\theta_2$.
 
 %\vskip.1in
 %umesto od $\overline\theta_1$, $\overline\theta_2$
 
-Jednostavnije je da počnemo od $\theta$. Za \textit{ad hoc} određen korak iteracije $k$ udaljavamo se od $\theta$ u oba smera. Čim naiđemo na ugao koji ne zadovoljava uslove, uzimamo prvi prethodni koji je zadovoljavao. Tako u oba smera, i te uglove proglašavamo za $\theta_1$ i $\theta_2$.
+%TODO Većinom sređeno.
+
+Jednostavnije je da počnemo od $\theta$. Za korak $k$ udaljavamo se od $\theta$ u oba smera. Čim naiđemo na ugao koji ne zadovoljava uslove, uzimamo prvi prethodni koji je zadovoljavao. Tako u oba smera, i te uglove proglašavamo za $\theta_1$ i $\theta_2$. Zbog brzine programa, radićemo dve provere. Prvo ćemo uzeti $k = 1\degree$ i ići od $\theta$ do prvog $\theta_1$ (ili $\theta_2$), zovimo ga $\theta_1'$. Potom ćemo uraditi proveru za $k = 0.01\degree$ od $\theta_1'$ do $\theta_1$ koje ćemo prihvatiti za naše $\theta_1$. Tako je rađeno u ovom radu. Za $\theta_2$ postupak je analogan.
 
 
 
 \section{Traženje optimalnog $\theta$}
 
-Jednostavan i očigledan model rešenja je da za svaki mogući ugao $\theta$ nadjemo $\theta_1$ i $\theta_2$ i da kao optimalni ugao izaberemo onaj čija je razlika $\theta_2 - \theta_1$ maksimalna. Zbog toga što uglova $\theta \in (0,\pi/2)$ postoji beskonačno, koristićemo korak iteracije $k$ i tražićemo $\theta$ u obliku $ \theta = 0 + nk, \theta \in (0,\pi/2), n \in  \mathbb{N}$. Veoma je bitno da odredimo dovoljno malo $k$, u suprotnom nećemo postići precizne rezultate. Moguća varijanta ovog modela je da nakon što nadjemo $\theta$, smanjimo $k$ i gledamo okolinu $(\theta - k_{staro}, \theta + k_{staro})$ za novo optimalno $\theta$.
-Za pronalaženje $\theta_1$ i $\theta_2$ koristićemo grubu silu. Takođe za proveru uslova (12) koristićemo grubu silu.
+%TODO
+
+Jednostavan i očigledan model rešenja je da za svaki mogući ugao $\theta$ nadjemo $\theta_1$ i $\theta_2$ i da kao optimalni ugao izaberemo onaj čija je razlika $\theta_2 - \theta_1$ maksimalna. Zbog toga što uglova $\theta \in (0,\pi/2)$ postoji beskonačno, koristićemo korak $k$ i tražićemo $\theta$ u obliku $ \theta = \theta_{min} + nk,$ $\theta \in (\theta_{min},$ $\theta_{max}),$ $n \in  \mathbb{N}$. Ugao $\theta_{min}$ predstavlja minimalno $\theta$ za koje možemo pogoditi koš u odnosu na pravilo (8), odnosno $\theta_{min} = \arctan(\dfrac{H}{d_c}) + 1 \degree$, gde smo dodali $1$ stepen da ne bi doslo do deljenja nulom pri računu u formuli (7). U radu smo odlučili da za $\theta_{min}$ uzmemo maksimum između prethodne formule i $20\degree$, $\theta_{min} = \max(\arctan(\dfrac{H}{d_c}) + 1 \degree,$ $20\degree)$. Ovo je odlučeno zato što u rasponu visine košarkaša od $0$ do $3$ metra svi optimalni uglovi su veći od $20\degree$. Za $\theta_{max}$ očigledan kandidat je $\pi/2$, ali kao i za $\theta_{min}$ ograničićemo sa na $70 \degree$ iz razloga što su optimalni uglovi manji za košarkaše do 3 metra.
+
+Veoma je bitno da odredimo dovoljno mali korak $k$, u suprotnom nećemo postići precizne rezultate. U radu smo se odlučili za $k = 0.01$, tako da imamo preciznost do na drugu decimalu. Moguća varijanta ovog modela je da nakon što nadjemo $\theta$, smanjimo $k$ i gledamo okolinu $(\theta - k_{staro},$ $\theta + k_{staro})$ za novo optimalno $\theta$. Ovo nismo radili.
 
 Vremenska složenost ovog rešenja je na taj način $O(n \cdot m \cdot l)$ gde je $n$ broj uglova $\theta$, $m$ prosek broja uglova $\theta_1$ i $\theta_2$, a $l$ broj vremenskih trenutaka ($t$-ova) za koje proveravamo uslov $(12)$. U zavisnosti od veličine koraka koji izaberemo imaćemo kompromis između preciznosti i dužine rada programa.
 
