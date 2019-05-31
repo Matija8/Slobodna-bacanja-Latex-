@@ -41,8 +41,7 @@ def uslovi_12_i_11(od, do, korak, d_c, r_l, r_o, g, H, v):
         # uslov (12)
         t1 = (d_c - r_o - r_l) / (v * cos(ugao+korak))
         t2 = (d_c - r_o + r_l) / (v * cos(ugao+korak))
-        t_korak = (t2-t1) / 11  # imacemo 10 provera da li t kaci obruc
-        for t in np.arange(t1, t2, t_korak):
+        for t in np.linspace(t1, t2, 10):
             if not (((x_koord(t, v, ugao+korak) - (d_c - r_o))**2
                     + (y_koord(t, v, ugao+korak, g) - H)**2) > (r_l**2)):
                 teta1_2 = ugao
