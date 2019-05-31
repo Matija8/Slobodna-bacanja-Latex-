@@ -473,20 +473,20 @@ Očigledan način je da iskoristimo formulu (10). Na taj način dobijamo dva kan
 U slučaju da dobijemo dva ugla za $\overline\theta_1$ ili $\overline\theta_2$ uzimamo onaj koji je bliži $\theta$.
 Problem sa ovom metodom je što uzimamo u obzir samo uslov prolaza (11), ne vršimo proveru da li važe ostali uslovi (5), (8) i (12). Umesto da ih posmatramo kao rešenja, $\overline\theta_1$ i $\overline\theta_2$ će nam predstavljati granicu. Znamo za $\theta_1$ i $\theta_2$ da se nalaze u rasponu $\theta_1 \in (\overline\theta_1, \theta)$ i $\theta_2 \in (\theta, \overline\theta_2)$. Dalje možemo grubom silom da idemo od $\overline\theta_1$ i $\overline\theta_2$ ka $\theta$, pomerajući se za ugao $k$, i prvi ugao koji ispunjava sve uslove proglašavamo za $\theta_1$, odnosno $\theta_2$.
 
-%\vskip.1in
-%umesto od $\overline\theta_1$, $\overline\theta_2$
 
-%TODO Većinom sređeno.
-
-Jednostavnije je da počnemo od $\theta$. Za korak $k$ udaljavamo se od $\theta$ u oba smera. Čim naiđemo na ugao koji ne zadovoljava uslove, uzimamo prvi prethodni koji je zadovoljavao. Tako u oba smera, i te uglove proglašavamo za $\theta_1$ i $\theta_2$. Zbog brzine programa, radićemo dve provere. Prvo ćemo uzeti $k = 1\degree$ i ići od $\theta$ do prvog $\theta_1$ (ili $\theta_2$), zovimo ga $\theta_1'$. Potom ćemo uraditi proveru za $k = 0.01\degree$ od $\theta_1'$ do $\theta_1$ koje ćemo prihvatiti za naše $\theta_1$. Tako je rađeno u ovom radu. Za $\theta_2$ postupak je analogan.
+Jednostavnije je da počnemo od $\theta$. Za korak $k$ udaljavamo se od $\theta$ u oba smera. Čim naiđemo na ugao koji ne zadovoljava uslove, uzimamo prvi prethodni koji je zadovoljavao. Tako u oba smera, i te uglove proglašavamo za $\theta_1$ i $\theta_2$. Zbog brzine programa, radićemo dve provere. Za korak ćemo prvo uzeti $k = 1$. Krećemo od $\theta$ i trazimo $\theta_1$ i $\theta_2$.
+$\theta_1$ tražimo tako što za svaki ugao $\theta - kn$, $n \in  \mathbb{N}$, proveravamo da li su zadovoljeni uslovi (5), (8), (11) i (12).
+Kada naiđemo na ugao koji ne zadovoljava potrebne uslove (nazovimo ga $\theta_1'$) možemo uzeti prvi prethodni koji je zadovoljio uslove (nazovimo ga $\theta_1''$) da bude naše $\theta_1$.
+Međutim, radi veće preciznosti, smanjićemo korak na $k = 0.01$ i istim postupkom ćemo naći $\theta_1$ na intervalu ($\theta_1'$, $\theta_1''$) , pri čemu sada krećemo od $\theta_1''$ a naredne uglove računamo kao $\theta_1'' - nk$. Slično za $\theta_2$, samo što ćemo dodavati $nk$ umesto da oduzimamo, jer sada tražimo veći ugao.
 
 
 
 \section{Traženje optimalnog $\theta$}
 
-%TODO
+%Jednostavan i očigledan model rešenja je da za svaki mogući ugao $\theta$ nadjemo $\theta_1$ i $\theta_2$ i da kao optimalni ugao izaberemo onaj čija je razlika $\theta_2 - \theta_1$ maksimalna.
 
-Jednostavan i očigledan model rešenja je da za svaki mogući ugao $\theta$ nadjemo $\theta_1$ i $\theta_2$ i da kao optimalni ugao izaberemo onaj čija je razlika $\theta_2 - \theta_1$ maksimalna. Zbog toga što uglova $\theta \in (0,\pi/2)$ postoji beskonačno, koristićemo korak $k$ i tražićemo $\theta$ u obliku $ \theta = \theta_{min} + nk,$ $\theta \in (\theta_{min},$ $\theta_{max}),$ $n \in  \mathbb{N}$. Ugao $\theta_{min}$ predstavlja minimalno $\theta$ za koje možemo pogoditi koš u odnosu na pravilo (8), odnosno $\theta_{min} = \arctan(\dfrac{H}{d_c}) + 1 \degree$, gde smo dodali $1$ stepen da ne bi doslo do deljenja nulom pri računu u formuli (7). U radu smo odlučili da za $\theta_{min}$ uzmemo maksimum između prethodne formule i $20\degree$, $\theta_{min} = \max(\arctan(\dfrac{H}{d_c}) + 1 \degree,$ $20\degree)$. Ovo je odlučeno zato što u rasponu visine košarkaša od $0$ do $3$ metra svi optimalni uglovi su veći od $20\degree$. Za $\theta_{max}$ očigledan kandidat je $\pi/2$, ali kao i za $\theta_{min}$ ograničićemo sa na $70 \degree$ iz razloga što su optimalni uglovi manji za košarkaše do 3 metra.
+Koristićemo metod grube sile, što znači da ćemo za svako moguće $\theta$ tražiti $\theta_1$ i $\theta_2$, na prethodno opisan način, a za optimalni ugao uzećemo ono teta za koje je razlika $\theta_2-\theta_1$ maksimalna.
+ Zbog toga što uglova $\theta \in (0,\pi/2)$ postoji beskonačno, koristićemo korak $k$ i tražićemo $\theta$ u obliku $ \theta = \theta_{min} + nk,$ $\theta \in (\theta_{min},$ $\theta_{max}),$ $n \in  \mathbb{N}$. Ugao $\theta_{min}$ predstavlja minimalno $\theta$ za koje možemo pogoditi koš u odnosu na pravilo (8), odnosno $\theta_{min} = \arctan(\dfrac{H}{d_c})$. U radu smo odlučili da za $\theta_{min}$ uzmemo maksimum između prethodne formule i $20\degree$, $\theta_{min} = \max(\arctan(\dfrac{H}{d_c})$, $20\degree)$. Ovo je odlučeno zato što u rasponu visine košarkaša od $0$ do $3$ metra svi optimalni uglovi su veći od $20\degree$. Za $\theta_{max}$ očigledan kandidat je $\pi/2$, ali kao i za $\theta_{min}$ ograničićemo sa na $70 \degree$ iz razloga što su optimalni uglovi manji za košarkaše do 3 metra.
 
 Veoma je bitno da odredimo dovoljno mali korak $k$, u suprotnom nećemo postići precizne rezultate. U radu smo se odlučili za $k = 0.01$, tako da imamo preciznost do na drugu decimalu. Moguća varijanta ovog modela je da nakon što nadjemo $\theta$, smanjimo $k$ i gledamo okolinu $(\theta - k_{staro},$ $\theta + k_{staro})$ za novo optimalno $\theta$. Ovo nismo radili.
 
