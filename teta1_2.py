@@ -5,12 +5,12 @@ import matplotlib.pyplot as plt
 
 def nadji_teta1_teta2(teta, d_c, r_l, r_o, g, H):
     # uslov (8)
-    if not atan(H/d_c) + prebaci_u_radijan(1) < teta < prebaci_u_radijan(90):
+    if not atan(H/d_c) + prebaci_u_radijan(1) < teta < prebaci_u_radijan(70):
         return teta, teta
 
     v = nadji_brzinu(d_c, teta, H, g)
     min_teta = max(asin(sqrt(2*g*H/v**2)), atan(H/d_c)) + prebaci_u_radijan(1)
-    max_teta = prebaci_u_radijan(90)
+    max_teta = prebaci_u_radijan(70)
 
     ugao_korak = prebaci_u_radijan(1)  # prvo nam je 1 stepen korak
     teta1 = uslovi_12_i_11(teta, min_teta, -ugao_korak, d_c, r_l, r_o, g, H, v)
@@ -34,22 +34,24 @@ def uslovi_12_i_11(od, do, korak, d_c, r_l, r_o, g, H, v):
 
     # uslov (11)
     for ugao in np.arange(od, do, korak):
-        if not d_c - r_o + r_l < nadji_distancu(v, ugao+korak, H, g) < d_c + r_o - r_l: #TODO
+        if not d_c - r_o + r_l < nadji_distancu(v, ugao+korak, H, g) < d_c + r_o - r_l:
             teta1_2 = ugao
             break
 
         # uslov (12)
         t1 = (d_c - r_o - r_l) / (v * cos(ugao+korak))
         t2 = (d_c - r_o + r_l) / (v * cos(ugao+korak))
-        t_korak = (t2-t1) / 10  # imacemo 9 provera da li t kaci obruc
+        t_korak = (t2-t1) / 11  # imacemo 10 provera da li t kaci obruc
         for t in np.arange(t1, t2, t_korak):
             if not (((x_koord(t, v, ugao+korak) - (d_c - r_o))**2
                     + (y_koord(t, v, ugao+korak, g) - H)**2) > (r_l**2)):
                 teta1_2 = ugao
                 stani = True
                 break
+
         if stani is True:
             break
+
     return teta1_2
 
 
