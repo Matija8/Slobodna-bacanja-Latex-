@@ -123,10 +123,6 @@ Košarkaš prilikom slobodnog bacanja izbacuje loptu sa visine koja odgovara 5/4
 
 Osnovni pojmovi:
 
-%\vskip0.2cm
-%TODO
-%TODO SREDI R_L!!!
-
 \begin{list}{}{}
 
 \item $h$ - visina košarkaša koji izvodi slobodna bacanja;
@@ -134,8 +130,7 @@ Osnovni pojmovi:
 \item $\theta$ - ugao izbačaja;
 \item $v_\theta$ - brzina izbačaja za ugao $\theta$ pri kojoj lopta prolazi kroz centar obruča;
 \item $d_c$ - rastojanje od košarkaša (y-ose) do centra obruča, $d_c = 4.19$ $m$;
-%\\($4.57$ $m$ - od linije do table, $0.15$ $m$ - od table do obruča, $0.23$ $m$ - $r_l$)
-\item $r_l$ - poluprečnik lopte, $r_l \approx 0.1193$ $m$; %TODO 0.1213
+\item $r_l$ - poluprečnik lopte, $r_l = 0.1213$ $m$;
 \item $r_o$ - poluprečnik obruča, $r_o = 0.23$ $m$;
 \item $g$ - gravitaciona konstanta, $g = 9.81 \dfrac{m}{s^2}$;
 
@@ -447,16 +442,9 @@ Mi tražimo $t$ tako da važi $DG(t) = (d_{dg}, H)$, gde je $d_{dg}$ x-koordinat
 Treća opcija je iterativno proveravati da li smo zakačili $O_1$, odnosno da li nije ispunjen uslov $(12)$. Znamo da za $L(t) = (x,y)$ možemo dotaći obruč samo ako važi $(d_c - r_o) - r_l < x < (d_c - r_o) + r_l $, odnosno razlika x-koordinata centra lopte $L$ i prednje ivice obruča $O_1$ je manja od poluprečnika lopte $r_l$. Nije teško odrediti $t$ za koje je $x$ u ovom rasponu. Samo koristimo formulu (3):
 \[ t_1 = \dfrac{d_c - r_o - r_l}{v_\theta \cos \theta}\quad , \quad  t_2 = \dfrac{d_c - r_o + r_l}{v_\theta \cos \theta} \]
 
-%TODO k za t u programu samo srediti.
-
-Dalje, za mali korak $k$, $k \in  \mathbb{R}$, proveravamo za svako $t = t_1+nk$, $t \in [t_1, t_2],$ $n \in  \mathbb{N} \cup \{0\}$, da li važi uslov $(12)$. Ovde je $n+1$ broj provera koje želimo da izvršimo. Sledi da ako želimo da izvršimo $n$ provera važiće $t_2 = t_1 + (n-1)k$, odnosno $k = \dfrac{t_2 - t_1}{n-1}$. U radu smo se odlučili za 11 provera, tako da nam je $k = \dfrac{t_2 - t_1}{10}$
+Dalje, za mali korak $k$, $k \in  \mathbb{R}$, proveravamo za svako $t = t_1+nk$, $t \in [t_1, t_2],$ $n \in  \mathbb{N} \cup \{0\}$, da li važi uslov $(12)$. Ovde je $n+1$ broj provera koje želimo da izvršimo. Sledi da ako želimo da izvršimo $n$ provera važiće $t_2 = t_1 + (n-1)k$, odnosno $k = \dfrac{t_2 - t_1}{n-1}$. U radu smo se odlučili za 10 provera, tako da nam je $k = \dfrac{t_2 - t_1}{9}$
 U slučaju da postoji $t$ za koje ne važi $(12)$ proglašavamo da je šut promašaj, inače pogodak.
 Dakle, uslovi koji moraju biti ispunjeni da bismo postigli pogodak su (5), (8), (11) i (12).
-
-%\[{\theta} > \arcsin(\sqrt[]{\dfrac{2 g H}{v_{\theta}^2}}) \quad (5) \quad \quad \textbf{;} \quad \quad {\theta} > \arctan(\dfrac{H}{d_c})  \quad (8)\]
-
-%\[ \quad \quad d_1 < x_{max} < d_2 \quad (11) \quad \quad \textbf{;} \quad \quad (x - d_c + r_o)^2 + (y - H)^2 > r_l^2  \quad (12) \]
-
 
 
 
@@ -515,7 +503,7 @@ Vremenska složenost ovog rešenja je na taj način $O(n \cdot m \cdot l)$ gde j
 
 
 
-\section{Tabela: Dallas Mavericks}
+\section{Tabela: Dallas Mavericks} %TODO
 
 \begin{table}[h]
 \begin{center}

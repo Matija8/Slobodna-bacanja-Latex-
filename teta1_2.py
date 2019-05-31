@@ -81,7 +81,7 @@ def nadji_distancu(v, teta, H, g):
 
 if __name__ == "__main__":
     d_c = 4.19            # daljina do centra obruca
-    r_l = 0.75/(2*pi)     # poluprecnik lopte
+    r_l = 0.1213          # poluprecnik lopte
     r_o = 0.23            # poluprecnik obruca
     g = 9.81              # gravitaciona konstanta
     hk = 3.05             # visina kosa
